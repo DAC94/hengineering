@@ -179,19 +179,20 @@ export const YouthPage: React.FC = () => {
               key={leader.name}
               className="bg-white p-6 rounded-lg border border-slate-200 border-t-4 border-t-amber-500 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow"
             >
-              <div className="space-y-3">
-                <div className="flex items-center space-x-4">
-                  <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-amber-400 bg-[#154c76] flex items-center justify-center shrink-0 shadow-sm">
+              <div className="space-y-4">
+                <div className="flex items-center space-x-5">
+                  {/* Enlarged Tasteful Portrait Container (w-32 h-32 = 128px) */}
+                  <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-amber-400 bg-[#154c76] flex items-center justify-center shrink-0 shadow-md">
                     <img
                       src={leader.photo}
                       alt={leader.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                       onError={(e) => {
                         const parent = e.currentTarget.parentElement;
                         if (parent) {
                           e.currentTarget.style.display = 'none';
                           const fallbackText = document.createElement('span');
-                          fallbackText.className = 'font-serif-guild text-xl font-bold text-amber-300';
+                          fallbackText.className = 'font-serif-guild text-2xl font-bold text-amber-300';
                           fallbackText.innerText = leader.initials;
                           parent.appendChild(fallbackText);
                         }
@@ -200,7 +201,7 @@ export const YouthPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <span className="inline-block px-2 py-0.5 rounded bg-amber-100 text-amber-900 text-[10px] font-bold uppercase tracking-wider mb-1">
+                    <span className="inline-block px-2.5 py-0.5 rounded bg-amber-100 text-amber-900 text-[10px] font-bold uppercase tracking-wider mb-1">
                       {leader.role}
                     </span>
                     <h3 className="text-base font-serif-guild font-bold text-[#154c76]">

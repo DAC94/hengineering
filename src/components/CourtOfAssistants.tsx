@@ -69,27 +69,26 @@ export const CourtOfAssistants: React.FC = () => {
           </p>
         </div>
 
-        {/* Officers Grid (5 Officers) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        {/* Officers Grid (5 Officers with enlarged 144px portraits) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {courtMembers.map((officer) => (
             <div
               key={officer.name}
-              className="bg-slate-50 p-5 rounded-lg border border-slate-200 border-t-4 border-t-[#154c76] text-center flex flex-col justify-between hover:shadow-md transition-shadow"
+              className="bg-slate-50 p-6 rounded-lg border border-slate-200 border-t-4 border-t-[#154c76] text-center flex flex-col justify-between hover:shadow-lg transition-all duration-300"
             >
               <div>
-                {/* Formal Portrait Photo */}
-                <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-amber-400 shadow-md mb-4 bg-[#154c76] flex items-center justify-center shrink-0">
+                {/* Tastefully Enlarged Formal Portrait Photo (w-36 h-36 = 144px) */}
+                <div className="w-36 h-36 mx-auto rounded-full overflow-hidden border-4 border-amber-400 shadow-md mb-5 bg-[#154c76] flex items-center justify-center shrink-0">
                   <img
                     src={officer.photo}
                     alt={officer.name}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     onError={(e) => {
-                      // Fallback avatar initials if file missing
                       e.currentTarget.style.display = 'none';
                       const parent = e.currentTarget.parentElement;
                       if (parent && !parent.querySelector('.fallback-initials')) {
                         const fallbackText = document.createElement('span');
-                        fallbackText.className = 'fallback-initials font-serif-guild text-2xl font-bold text-amber-300';
+                        fallbackText.className = 'fallback-initials font-serif-guild text-3xl font-bold text-amber-300';
                         fallbackText.innerText = officer.initials;
                         parent.appendChild(fallbackText);
                       }
@@ -97,15 +96,15 @@ export const CourtOfAssistants: React.FC = () => {
                   />
                 </div>
 
-                <span className="inline-block px-2 py-0.5 rounded bg-amber-100 text-amber-900 text-[10px] font-bold mb-2 uppercase tracking-wider">
+                <span className="inline-block px-2.5 py-0.5 rounded bg-amber-100 text-amber-900 text-[10px] font-bold mb-2 uppercase tracking-wider">
                   {officer.role}
                 </span>
 
-                <h3 className="text-sm font-serif-guild font-bold text-[#154c76] mb-1 leading-tight">
+                <h3 className="text-base font-serif-guild font-bold text-[#154c76] mb-1 leading-tight">
                   {officer.name}
                 </h3>
                 
-                <p className="text-[11px] font-garamond italic text-amber-800 mb-3 font-semibold">
+                <p className="text-xs font-garamond italic text-amber-800 mb-3 font-semibold">
                   {officer.title}
                 </p>
 
