@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Cookie, ShieldCheck, X, ChevronRight } from 'lucide-react';
+import { Cookie, ShieldCheck } from 'lucide-react';
 
 interface CookieConsentBannerProps {
   onNavigate?: (tab: string, sectionId?: string) => void;
@@ -9,22 +9,38 @@ export const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({ onNavi
   const [visible, setVisible] = useState<boolean>(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem('hengineers_cookie_consent');
-    if (!consent) {
+    // Helper to read cookie by name
+    const getCookie = (name: string) => {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop()?.split(';').shift();
+      return null;
+    };
+
+    const consentCookie = getCookie('hengineers_cookie_consent');
+    const consentStorage = localStorage.getItem('hengineers_cookie_consent');
+
+    if (!consentCookie && !consentStorage) {
       // Delay slightly for smooth page load transition
       const timer = setTimeout(() => setVisible(true), 600);
       return () => clearTimeout(timer);
     }
   }, []);
 
-  const handleAcceptAll = () => {
-    localStorage.setItem('hengineers_cookie_consent', 'accepted_all');
+  const setConsentCookie = (value: string) => {
+    // 1. Set explicit browser document cookie (valid for 1 year)
+    document.cookie = `hengineers_cookie_consent=${value}; max-age=31536000; path=/; SameSite=Lax`;
+    // 2. Set localStorage backup
+    localStorage.setItem('hengineers_cookie_consent', value);
     setVisible(false);
   };
 
+  const handleAcceptAll = () => {
+    setConsentCookie('accepted_all');
+  };
+
   const handleEssentialOnly = () => {
-    localStorage.setItem('hengineers_cookie_consent', 'essential_only');
-    setVisible(false);
+    setConsentCookie('essential_only');
   };
 
   if (!visible) return null;
