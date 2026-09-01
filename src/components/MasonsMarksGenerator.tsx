@@ -2,7 +2,7 @@ import React, { useState, useId } from 'react';
 import { Compass, Stamp, Check, Shield } from 'lucide-react';
 
 export const MasonsMarksGenerator: React.FC = () => {
-  const [masonName, setMasonName] = useState<string>('Cordelia Sterling');
+  const [masonName, setMasonName] = useState<string>('Mason Mark');
   const [copied, setCopied] = useState<boolean>(false);
   const markId = useId();
 
@@ -16,7 +16,7 @@ export const MasonsMarksGenerator: React.FC = () => {
     return Math.abs(hash);
   };
 
-  const seed = getHash(masonName || 'Hengineer');
+  const seed = getHash(masonName || 'Mason Mark');
   const styleIndex = seed % 6;
 
   const handleStampCertificate = () => {
@@ -135,7 +135,7 @@ export const MasonsMarksGenerator: React.FC = () => {
               type="text"
               value={masonName}
               onChange={(e) => setMasonName(e.target.value)}
-              placeholder="e.g. Cordelia Sterling"
+              placeholder="e.g. Mason Mark"
               className="w-full px-4 py-2.5 rounded border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#154c76] font-serif-guild text-sm text-slate-800"
             />
           </div>
@@ -181,7 +181,7 @@ export const MasonsMarksGenerator: React.FC = () => {
           </div>
 
           <p className="text-[11px] font-serif-guild italic text-slate-600 mt-3 text-center">
-            Registered Stonemason Mark for <strong>{masonName || 'Hengineer'}</strong>
+            Registered Stonemason Mark for <strong>{masonName || 'Mason Mark'}</strong>
           </p>
         </div>
 
