@@ -49,8 +49,8 @@ export const AboutPage: React.FC = () => {
             </p>
 
             <div className="p-4 bg-slate-50 rounded border border-slate-200 text-xs text-slate-700 space-y-2 font-mono">
-              <p><strong className="text-[#154c76] font-serif-guild">Arms (Blazon):</strong> Azure, two sarsen trilithons argent in fess, in chief a brass plumb bob and square or.</p>
-              <p><strong className="text-[#154c76] font-serif-guild">Crest:</strong> A Salisbury Plain bustard proper, holding in its beak a stone chisel or.</p>
+              <p><strong className="text-[#154c76] font-serif-guild">Arms (Blazon):</strong> Azure, on a chevron Gules fimbriated Or between two plumb-bobs in chief of the third, a sarsen trilithon Or.</p>
+              <p><strong className="text-[#154c76] font-serif-guild">Crest:</strong> Upon a helm with a wreath Or and Gules, a Salisbury Great Bustard statant proper, holding in its beak a mason's stone chisel Or.</p>
               <p><strong className="text-[#154c76] font-serif-guild">Motto:</strong> <span className="font-garamond italic text-amber-900 font-bold">"Saxa Ligamus, Saecula Stabilimus"</span> (We bind the stones, we stabilize the ages).</p>
             </div>
           </div>
