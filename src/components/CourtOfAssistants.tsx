@@ -10,6 +10,7 @@ export const CourtOfAssistants: React.FC = () => {
       bio: 'Former Chief Archaeo-Engineer of Salisbury Plain. Specialist in lintel tenon friction and acoustic megalith resonance.',
       badge: 'Master for the Year 2025–2026',
       photo: '/images/officer_master_alistair.jpg',
+      initials: 'AT',
     },
     {
       role: 'Upper Warden',
@@ -18,6 +19,7 @@ export const CourtOfAssistants: React.FC = () => {
       bio: 'Senior Counsel for Ancient Stonework Rights. Author of "The Law of Unmoved Stones and Ancient Rights of Roller Passage".',
       badge: 'Sworn Liveryman & Upper Warden',
       photo: '/images/officer_eleanor_mortise.jpg',
+      initials: 'EM',
     },
     {
       role: 'Renter Warden',
@@ -26,6 +28,16 @@ export const CourtOfAssistants: React.FC = () => {
       bio: 'Oversees the Guild Charitable Trust Fund, providing £250,000 annually in stone masonry apprenticeships.',
       badge: 'Sworn Liveryman & Renter Warden',
       photo: '/images/officer_bartholomew_bluestone.jpg',
+      initials: 'BB',
+    },
+    {
+      role: 'Junior Warden & Youth Chair',
+      name: 'Ms. Freya Lintel, MEng',
+      title: 'Chair of Next Gen Hengineers',
+      bio: 'Late-twenties structural engineer pioneering youth membership recruitment, digital stone modeling, and modernizing Guild traditions to secure the Livery’s next millennium.',
+      badge: 'Junior Warden & Youth Network Chair',
+      photo: '/images/officer_freya_lintel.jpg',
+      initials: 'FL',
     },
     {
       role: 'The Clerk to the Guild',
@@ -34,6 +46,7 @@ export const CourtOfAssistants: React.FC = () => {
       bio: 'Manages Guildhall business, Freedom of the City enrollments, and Megalithic Hall venue reservations.',
       badge: 'Clerk to the Worshipful Company',
       photo: '/images/officer_septimus_megalith.jpg',
+      initials: 'SM',
     },
   ];
 
@@ -52,36 +65,47 @@ export const CourtOfAssistants: React.FC = () => {
           </h2>
           <div className="w-20 h-1 bg-amber-500 mx-auto mb-4" />
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            The Master, Wardens, and Court of Assistants govern the affairs, apprenticeships, and ancient rights of the Worshipful Company.
+            The Master, Wardens, and Court of Assistants govern the affairs, apprenticeships, youth networks, and ancient rights of the Worshipful Company.
           </p>
         </div>
 
-        {/* Officers Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Officers Grid (5 Officers) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {courtMembers.map((officer) => (
             <div
               key={officer.name}
-              className="bg-slate-50 p-6 rounded-lg border border-slate-200 border-t-4 border-t-[#154c76] text-center flex flex-col justify-between hover:shadow-md transition-shadow"
+              className="bg-slate-50 p-5 rounded-lg border border-slate-200 border-t-4 border-t-[#154c76] text-center flex flex-col justify-between hover:shadow-md transition-shadow"
             >
               <div>
                 {/* Formal Portrait Photo */}
-                <div className="w-28 h-28 mx-auto rounded-full overflow-hidden border-4 border-amber-400 shadow-md mb-4 bg-[#154c76]">
+                <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-amber-400 shadow-md mb-4 bg-[#154c76] flex items-center justify-center">
                   <img
                     src={officer.photo}
                     alt={officer.name}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      // Fallback if image is pending photo shoot
+                      const parent = e.currentTarget.parentElement;
+                      if (parent) {
+                        e.currentTarget.style.display = 'none';
+                        const fallbackText = document.createElement('span');
+                        fallbackText.className = 'font-serif-guild text-2xl font-bold text-amber-300';
+                        fallbackText.innerText = officer.initials;
+                        parent.appendChild(fallbackText);
+                      }
+                    }}
                   />
                 </div>
 
-                <span className="inline-block px-2.5 py-0.5 rounded bg-amber-100 text-amber-900 text-[11px] font-bold mb-2 uppercase tracking-wider">
+                <span className="inline-block px-2 py-0.5 rounded bg-amber-100 text-amber-900 text-[10px] font-bold mb-2 uppercase tracking-wider">
                   {officer.role}
                 </span>
 
-                <h3 className="text-base font-serif-guild font-bold text-[#154c76] mb-1">
+                <h3 className="text-sm font-serif-guild font-bold text-[#154c76] mb-1 leading-tight">
                   {officer.name}
                 </h3>
                 
-                <p className="text-xs font-garamond italic text-amber-800 mb-3 font-semibold">
+                <p className="text-[11px] font-garamond italic text-amber-800 mb-3 font-semibold">
                   {officer.title}
                 </p>
 
@@ -90,7 +114,7 @@ export const CourtOfAssistants: React.FC = () => {
                 </p>
               </div>
 
-              <div className="border-t border-slate-200 pt-3 flex items-center justify-center space-x-1.5 text-[11px] text-[#154c76] font-semibold">
+              <div className="border-t border-slate-200 pt-3 flex items-center justify-center space-x-1.5 text-[10px] text-[#154c76] font-semibold">
                 <UserCheck className="w-3.5 h-3.5 text-amber-600 shrink-0" />
                 <span>{officer.badge}</span>
               </div>
