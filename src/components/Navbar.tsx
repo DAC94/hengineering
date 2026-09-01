@@ -19,6 +19,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onNavigate, onOpenPor
       tab: 'about',
       dropdown: [
         { name: 'Our History & Charters', tab: 'about', sectionId: 'history' },
+        { name: 'College of Arms Heraldry', tab: 'about', sectionId: 'heraldry' },
         { name: '1515 Precedence Dispute', tab: 'about', sectionId: 'dispute1515' },
         { name: '1666 Great Fire Survival', tab: 'about', sectionId: 'fire1666' },
         { name: 'Civic Affiliations', tab: 'about', sectionId: 'affiliations' },
@@ -61,6 +62,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onNavigate, onOpenPor
         { name: 'Common Hall Elections', tab: 'freedom', sectionId: 'commonhall' },
       ],
     },
+    { name: 'Events Calendar', tab: 'events' },
     { name: 'News & Philanthropy', tab: 'news' },
     { name: 'Megalithic Hall Hire', tab: 'hall' },
   ];

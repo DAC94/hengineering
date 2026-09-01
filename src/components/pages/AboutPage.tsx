@@ -1,6 +1,7 @@
 import React from 'react';
 import { HistoryTimeline } from '../HistoryTimeline';
-import { Landmark, Flame, Scroll, ShieldCheck, HeartHandshake, ExternalLink, Building2 } from 'lucide-react';
+import { CoatOfArms } from '../CoatOfArms';
+import { Landmark, Flame, Scroll, ShieldCheck, ExternalLink, Building2, Shield } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
   return (
@@ -19,6 +20,41 @@ export const AboutPage: React.FC = () => {
         <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto font-normal">
           Tracing four millennia of sarsen stone mechanics, Royal Charters, Great Fire survivals, and civic duty in the City of London.
         </p>
+      </div>
+
+      {/* College of Arms Heraldry & Blazon Card */}
+      <div id="heraldry" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white p-6 sm:p-8 rounded-lg border border-slate-200 shadow-sm border-t-4 border-t-amber-500 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-4 flex justify-center">
+            <div className="p-6 rounded-lg bg-[#092e4a] border border-amber-500/40 text-center shadow-md">
+              <CoatOfArms size="lg" className="mx-auto mb-3" />
+              <span className="font-serif-guild text-amber-300 font-bold text-xs uppercase tracking-widest block">
+                College of Arms Grant
+              </span>
+            </div>
+          </div>
+
+          <div className="lg:col-span-8 space-y-4">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded bg-amber-500/10 text-amber-900 text-xs font-serif-guild font-bold uppercase tracking-wider">
+              <Shield className="w-4 h-4 text-amber-600" />
+              <span>Official Heraldic Blazon</span>
+            </div>
+
+            <h3 className="text-xl font-serif-guild font-bold text-[#154c76]">
+              The Guild Coat of Arms &amp; Latin Motto
+            </h3>
+
+            <p className="text-xs text-slate-600 leading-relaxed font-normal">
+              Granted under Letters Patent by Garter Principal King of Arms, the armorial bearings of the Worshipful Company embody four millennia of sarsen engineering and astronomical alignment.
+            </p>
+
+            <div className="p-4 bg-slate-50 rounded border border-slate-200 text-xs text-slate-700 space-y-2 font-mono">
+              <p><strong className="text-[#154c76] font-serif-guild">Arms (Blazon):</strong> Azure, two sarsen trilithons argent in fess, in chief a brass plumb bob and square or.</p>
+              <p><strong className="text-[#154c76] font-serif-guild">Crest:</strong> A Salisbury Plain bustard proper, holding in its beak a stone chisel or.</p>
+              <p><strong className="text-[#154c76] font-serif-guild">Motto:</strong> <span className="font-garamond italic text-amber-900 font-bold">"Saxa Ligamus, Saecula Stabilimus"</span> (We bind the stones, we stabilize the ages).</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Special Lore Blocks 1 & 2 */}
