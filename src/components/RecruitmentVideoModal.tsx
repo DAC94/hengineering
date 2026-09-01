@@ -1,5 +1,6 @@
 import React from 'react';
-import { X, Film, Shield, Sparkles } from 'lucide-react';
+import { X, Film, Shield } from 'lucide-react';
+import { CoatOfArms } from './CoatOfArms';
 
 interface RecruitmentVideoModalProps {
   isOpen: boolean;
@@ -29,7 +30,7 @@ export const RecruitmentVideoModal: React.FC<RecruitmentVideoModalProps> = ({ is
           </button>
         </div>
 
-        {/* Video Player Container with 4% CSS Zoom + Taller Compact Guild Archival Badge Overlay */}
+        {/* Video Player Container with 4% CSS Zoom + Guild Crest Emblem Overlay */}
         <div className="relative bg-black aspect-video overflow-hidden flex items-center justify-center">
           
           <video
@@ -42,15 +43,9 @@ export const RecruitmentVideoModal: React.FC<RecruitmentVideoModalProps> = ({ is
             Your browser does not support playing HTML5 video.
           </video>
 
-          {/* Official Taller & Compact Guild Archival Stamp Overlay in Bottom-Right Corner */}
-          <div className="absolute bottom-10 right-3 z-20 pointer-events-none bg-[#092e4a] border-2 border-amber-400 rounded-lg px-3 py-3 w-40 sm:w-44 text-amber-200 shadow-2xl flex flex-col items-center justify-center text-center space-y-1 backdrop-blur-md">
-            <div className="flex items-center space-x-1 text-amber-400 font-serif-guild text-[11px] font-extrabold uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-              <span>WCoMB Film</span>
-            </div>
-            <div className="text-[10px] font-mono text-amber-300/90 leading-tight font-bold">
-              Archival Seal No. 115
-            </div>
+          {/* Official Guild Crest Emblem Overlay in Bottom-Right Corner (Masks AI Watermark) */}
+          <div className="absolute bottom-10 right-4 z-20 pointer-events-none p-2 rounded-xl bg-[#092e4a]/90 border border-amber-400/80 shadow-2xl backdrop-blur-md flex flex-col items-center justify-center">
+            <CoatOfArms size="md" className="w-16 h-20" />
           </div>
 
         </div>
