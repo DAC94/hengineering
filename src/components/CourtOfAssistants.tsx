@@ -8,7 +8,7 @@ export const CourtOfAssistants: React.FC = () => {
       name: 'Sir Alistair Trilithon, FIME',
       title: 'Master for the Year 2025–2026',
       bio: 'Former Chief Archaeo-Engineer of Salisbury Plain. Specialist in lintel tenon friction and acoustic megalith resonance.',
-      badge: 'Master Regalia & Chain of Office',
+      badge: 'Master for the Year 2025–2026',
       photo: '/images/officer_master_alistair.jpg',
     },
     {
@@ -16,7 +16,7 @@ export const CourtOfAssistants: React.FC = () => {
       name: 'Dame Eleanor Mortise, KC',
       title: 'Upper Warden of the Court',
       bio: 'Senior Counsel for Ancient Stonework Rights. Author of "The Law of Unmoved Stones and Ancient Rights of Roller Passage".',
-      badge: 'Senior Liveryman Regalia',
+      badge: 'Sworn Liveryman & Upper Warden',
       photo: '/images/officer_eleanor_mortise.jpg',
     },
     {
@@ -24,7 +24,7 @@ export const CourtOfAssistants: React.FC = () => {
       name: 'Lord Bartholomew Bluestone, JP',
       title: 'Renter Warden & Treasurer',
       bio: 'Oversees the Guild Charitable Trust Fund, providing £250,000 annually in stone masonry apprenticeships.',
-      badge: 'Court Warden Chain & Medallion',
+      badge: 'Sworn Liveryman & Renter Warden',
       photo: '/images/officer_bartholomew_bluestone.jpg',
     },
     {
@@ -32,7 +32,7 @@ export const CourtOfAssistants: React.FC = () => {
       name: 'Septimus Megalith, Esq.',
       title: 'Clerk to the Worshipful Company',
       bio: 'Manages Guildhall business, Freedom of the City enrollments, and Megalithic Hall venue reservations.',
-      badge: 'Clerk’s Legal Bands & Ribbon Badge',
+      badge: 'Clerk to the Worshipful Company',
       photo: '/images/officer_septimus_megalith.jpg',
     },
   ];
@@ -64,7 +64,7 @@ export const CourtOfAssistants: React.FC = () => {
               className="bg-slate-50 p-6 rounded-lg border border-slate-200 border-t-4 border-t-[#154c76] text-center flex flex-col justify-between hover:shadow-md transition-shadow"
             >
               <div>
-                {/* Formal Portrait Photo in Ceremonial Livery Regalia */}
+                {/* Formal Portrait Photo */}
                 <div className="w-28 h-28 mx-auto rounded-full overflow-hidden border-4 border-amber-400 shadow-md mb-4 bg-[#154c76]">
                   <img
                     src={officer.photo}
