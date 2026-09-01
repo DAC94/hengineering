@@ -8,32 +8,32 @@ export const CourtOfAssistants: React.FC = () => {
       name: 'Sir Alistair Trilithon, FIME',
       title: 'Master for the Year 2025–2026',
       bio: 'Former Chief Archaeo-Engineer of Salisbury Plain. Specialist in lintel tenon friction and acoustic megalith resonance.',
-      badge: 'Master Regalia & Badge',
-      initials: 'AT',
+      badge: 'Master Regalia & Chain of Office',
+      photo: '/images/officer_master_alistair.jpg',
     },
     {
       role: 'Upper Warden',
       name: 'Dame Eleanor Mortise, KC',
       title: 'Upper Warden of the Court',
       bio: 'Senior Counsel for Ancient Stonework Rights. Author of "The Law of Unmoved Stones and Ancient Rights of Roller Passage".',
-      badge: 'Senior Liveryman',
-      initials: 'EM',
+      badge: 'Senior Liveryman Regalia',
+      photo: '/images/officer_eleanor_mortise.jpg',
     },
     {
       role: 'Renter Warden',
       name: 'Lord Bartholomew Bluestone, JP',
       title: 'Renter Warden & Treasurer',
       bio: 'Oversees the Guild Charitable Trust Fund, providing £250,000 annually in stone masonry apprenticeships.',
-      badge: 'Court Warden',
-      initials: 'BB',
+      badge: 'Court Warden Chain & Medallion',
+      photo: '/images/officer_bartholomew_bluestone.jpg',
     },
     {
       role: 'The Clerk to the Guild',
       name: 'Septimus Megalith, Esq.',
       title: 'Clerk to the Worshipful Company',
       bio: 'Manages Guildhall business, Freedom of the City enrollments, and Megalithic Hall venue reservations.',
-      badge: 'The Clerk',
-      initials: 'SM',
+      badge: 'Clerk’s Legal Bands & Ribbon Badge',
+      photo: '/images/officer_septimus_megalith.jpg',
     },
   ];
 
@@ -64,11 +64,13 @@ export const CourtOfAssistants: React.FC = () => {
               className="bg-slate-50 p-6 rounded-lg border border-slate-200 border-t-4 border-t-[#154c76] text-center flex flex-col justify-between hover:shadow-md transition-shadow"
             >
               <div>
-                {/* Formal Portrait Avatar */}
-                <div className="w-20 h-20 mx-auto rounded-full bg-[#154c76] text-amber-300 border-4 border-amber-400 flex items-center justify-center mb-4 shadow-sm">
-                  <span className="font-serif-guild text-2xl font-bold">
-                    {officer.initials}
-                  </span>
+                {/* Formal Portrait Photo in Ceremonial Livery Regalia */}
+                <div className="w-28 h-28 mx-auto rounded-full overflow-hidden border-4 border-amber-400 shadow-md mb-4 bg-[#154c76]">
+                  <img
+                    src={officer.photo}
+                    alt={officer.name}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
 
                 <span className="inline-block px-2.5 py-0.5 rounded bg-amber-100 text-amber-900 text-[11px] font-bold mb-2 uppercase tracking-wider">
@@ -89,7 +91,7 @@ export const CourtOfAssistants: React.FC = () => {
               </div>
 
               <div className="border-t border-slate-200 pt-3 flex items-center justify-center space-x-1.5 text-[11px] text-[#154c76] font-semibold">
-                <UserCheck className="w-3.5 h-3.5 text-amber-600" />
+                <UserCheck className="w-3.5 h-3.5 text-amber-600 shrink-0" />
                 <span>{officer.badge}</span>
               </div>
             </div>
