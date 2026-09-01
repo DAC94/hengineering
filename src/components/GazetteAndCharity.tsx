@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
-import { BookOpen, GraduationCap, HeartHandshake, FileText, ArrowRight, Sparkles, AlertTriangle, Terminal } from 'lucide-react';
+import { BookOpen, FileText, ArrowRight, GraduationCap, HeartHandshake, Sparkles, Terminal, AlertTriangle } from 'lucide-react';
+import { GrantApplicationModal } from './GrantApplicationModal';
 
 interface Article {
   id: string;
@@ -16,113 +17,113 @@ interface Article {
 const ALL_ARTICLES: Article[] = [
   // 2024
   {
-    id: 'sarsen-2024-01',
+    id: 'restoration-2024-01',
     year: 2024,
     month: 3,
     monthName: 'March 2024',
-    title: 'Court Allocates £150,000 to Salisbury Plain Stone Conservation',
-    category: 'Grants & Philanthropy',
-    excerpt: 'The Court of Assistants has approved a £150,000 grant towards the emergency structural stabilization of prehistoric sarsen lintels.',
-    author: 'Education Committee',
-    docPath: '/news/archives/2024/doc_sarsen_150.asp',
+    title: 'Guild Grants £45,000 for Stonehenge Trilithon Mortise Inspection',
+    category: 'Conservation',
+    excerpt: 'The Court of Assistants voted to approve a £45,000 grant from the Charitable Trust Fund to inspect lintel tenon joints on Salisbury Plain.',
+    author: 'The Master',
+    docPath: '/news/archives/2024/doc_trilithon_grant.asp',
   },
   {
-    id: 'charter-2024-02',
+    id: 'bursary-2024-02',
     year: 2024,
-    month: 9,
-    monthName: 'September 2024',
-    title: 'Annual London Bridge Lintel Drive Celebrates 900th Anniversary',
-    category: 'Civic Customs',
-    excerpt: 'Freemen of the Worshipful Company gathered on London Bridge to execute the annual toll-free sheep drive with a 4-tonne sarsen lintel.',
+    month: 8,
+    monthName: 'August 2024',
+    title: '2024 Young Hengineer Bursaries Awarded to 12 City Apprentices',
+    category: 'Apprenticeships',
+    excerpt: 'Twelve junior stonemasons and structural civil engineers received full Livery indentures and bursaries during Common Hall at Megalithic Hall.',
+    author: 'Renter Warden',
+    docPath: '/news/archives/2024/doc_bursaries_2024.asp',
+  },
+  {
+    id: 'charter-2024-03',
+    year: 2024,
+    month: 11,
+    monthName: 'November 2024',
+    title: 'WCoMB Celebrates 924th Anniversary of 1100 Royal Charter',
+    category: 'Guild Heritage',
+    excerpt: 'Liverymen gathered at Guildhall for a Thanksgiving Service commemorating King Henry I’s grant of rights to the Megalith Builders.',
     author: 'The Clerk',
-    docPath: '/news/archives/2024/doc_bridge_900.asp',
+    docPath: '/news/archives/2024/doc_charter_celebration.asp',
   },
   // 2025
   {
-    id: 'plumb-2025-01',
+    id: 'quarry-2025-01',
     year: 2025,
     month: 2,
     monthName: 'February 2025',
-    title: 'Discovery of 14th-Century Plumb Bob in Gresham Street Vaults',
-    category: 'Guild Heritage',
-    excerpt: 'Archival excavations beneath Megalithic Hall revealed a hallmarked 1342 silver-gilt plumb bob used by medieval Master Hengineers.',
-    author: 'Guild Historian',
-    docPath: '/news/archives/2025/doc_plumb_1342.asp',
+    title: 'Guild Delegation Visits Wiltshire Sarsen Quarries for Timber Roller Tests',
+    category: 'Hengineering Science',
+    excerpt: 'Master Hengineer Sir Alistair Montgomery led an experimental trial testing friction coefficients of seasoned English oak rollers on 20-tonne blocks.',
+    author: 'Master Hengineer',
+    docPath: '/news/archives/2025/doc_roller_trials.asp',
   },
   {
-    id: 'master-2025-02',
+    id: 'solstice-2025-02',
     year: 2025,
     month: 6,
     monthName: 'June 2025',
-    title: 'Sir Alistair Montgomery Installed as Master Hengineer for 2025–2026',
-    category: 'Guild Governance',
-    excerpt: 'Sir Alistair Montgomery, FIME was formally sworn in as Master Hengineer at a ceremony held at Megalithic Hall in the City of London.',
+    title: 'Record Attendance at Midsummer Solstice Banquet in Megalithic Hall',
+    category: 'Events',
+    excerpt: 'Over 180 Liverymen and guests enjoyed roasted Wiltshire venison and vintage mead in celebration of the summer solstice solar alignment.',
     author: 'The Clerk',
-    docPath: '/news/archives/2025/doc_master_installation.asp',
+    docPath: '/news/archives/2025/doc_solstice_banquet.asp',
   },
   {
-    id: 'mead-2025-03',
+    id: 'court-2025-03',
     year: 2025,
-    month: 11,
-    monthName: 'November 2025',
-    title: '1998 Vintage Cask Mead Declared Mature by Renter Warden',
-    category: 'Cellar News',
-    excerpt: 'Renter Warden Lord Bartholomew Stirling completed the cellar audit of the 1998 Solstice Cask Mead batch, approving its release for Banquets.',
-    author: 'Cellar Committee',
-    docPath: '/news/archives/2025/doc_cellar_mead_98.asp',
+    month: 10,
+    monthName: 'October 2025',
+    title: 'Court Admits 8 New Freemen by Redemption and Servitude',
+    category: 'Membership',
+    excerpt: 'The Master, Wardens, and Assistants formally admitted eight new Freemen of the Worshipful Company following examination of their mason marks.',
+    author: 'The Clerk',
+    docPath: '/news/archives/2025/doc_court_admissions.asp',
   },
   // 2026
   {
-    id: 'freemen-2026-01',
+    id: 'nextgen-2026-01',
     year: 2026,
-    month: 2,
-    monthName: 'February 2026',
-    title: 'City Livery Briefing & Midsummer Solstice Banquet Announced',
-    category: 'Livery Movement',
-    excerpt: 'Master Hengineer Sir Alistair Montgomery welcomed over 150 members and civic guests to announce the upcoming Solstice Banquet at Megalithic Hall.',
-    author: 'The Master',
-    docPath: '/news/archives/2026/doc_briefing_2026.asp',
+    month: 1,
+    monthName: 'January 2026',
+    title: 'Young Freemen Network Launches Subterranean Vault Social Series',
+    category: 'Youth & Next Gen',
+    excerpt: 'Junior Warden Ms. Cordelia Sterling announced a new series of networking socials and vintage mead tastings for under-35 Freemen.',
+    author: 'Youth Committee',
+    docPath: '/news/archives/2026/doc_nextgen_launch.asp',
   },
   {
-    id: 'grants-2026-02',
+    id: 'acoustics-2026-02',
     year: 2026,
-    month: 6,
-    monthName: 'June 2026',
-    title: 'New Brochure Promotes WCoMB £250,000 Educational Grants',
-    category: 'Grants & Philanthropy',
-    excerpt: 'The Worshipful Company is calling on young stone masons and engineering students to apply for £250,000 in annual bursaries.',
-    author: 'Education Committee',
-    docPath: '/news/archives/2026/doc_bursaries_2026.asp',
+    month: 5,
+    monthName: 'May 2026',
+    title: 'Research Paper: Megalithic Acoustic Resonance in City Livery Halls',
+    category: 'Hengineering Science',
+    excerpt: 'A groundbreaking study published by Guild fellows demonstrates how Sarsen stone acoustics enhance choir vocal resonance during Livery banquets.',
+    author: 'Hengineering Research Panel',
+    docPath: '/news/archives/2026/doc_acoustic_resonance.asp',
   },
   {
-    id: 'freemen-2026-03',
+    id: 'lordmayor-2026-03',
     year: 2026,
-    month: 8,
-    monthName: 'August 2026',
-    title: 'Four New Freemen Admitted to WCoMB at Megalithic Hall',
-    category: 'Guild News',
-    excerpt: 'Four new Freemen were admitted to the Worshipful Company of Megalith Builders following successful completion of the Freeman Examination.',
+    month: 9,
+    monthName: 'September 2026',
+    title: 'Guild Floats Ceremonial Sarsen Lintel in Lord Mayor’s Show Parade',
+    category: 'Civic Customs',
+    excerpt: 'The Worshipful Company joined the 800-year-old procession through the City of London with a replica 10-tonne sarsen stone drawn by team oxen.',
     author: 'The Clerk',
-    docPath: '/news/archives/2026/doc_freemen_aug2026.asp',
+    docPath: '/news/archives/2026/doc_lord_mayors_show.asp',
   },
+  // Future Unlocks (2027-2030)
   {
-    id: 'precedence-2026-04',
-    year: 2026,
-    month: 11,
-    monthName: 'November 2026',
-    title: 'Livery Precedence Roll Formally Certified at Company No. 115',
-    category: 'Civic Precedence',
-    excerpt: 'The Court of Aldermen at Guildhall formally acknowledged Company No. 115 on the official precedence roll of City Livery Companies.',
-    author: 'The Clerk',
-    docPath: '/news/archives/2026/doc_precedence_115.asp',
-  },
-  // 2027
-  {
-    id: 'highrise-2027-01',
+    id: 'skyscraper-2027-01',
     year: 2027,
-    month: 2,
-    monthName: 'February 2027',
-    title: 'Court Authorizes Sarsen Counterweight Testing for New City Tower',
+    month: 3,
+    monthName: 'March 2027',
+    title: 'WCoMB Advises Sarsen Counterweight Testing for New City Tower',
     category: 'Hengineering Science',
     excerpt: 'Guild engineers were consulted by the City Planning Committee to load-test granite counterweights for a proposed 40-storey Square Mile skyscraper.',
     author: 'Hengineering Research Panel',
@@ -135,7 +136,7 @@ const ALL_ARTICLES: Article[] = [
     monthName: 'July 2027',
     title: 'Common Hall Lord Mayor Proxy Ballot Results Certified',
     category: 'Civic Elections',
-    excerpt: 'Clerk Septimus Howard certified the proxy votes cast by sworn Liverymen for the upcoming Michaelmas election of the Lord Mayor of London.',
+    excerpt: 'Clerk Arthur Howard certified the proxy votes cast by sworn Liverymen for the upcoming Michaelmas election of the Lord Mayor of London.',
     author: 'The Clerk',
     docPath: '/news/archives/2027/doc_ballot_2027.asp',
   },
@@ -234,6 +235,7 @@ const ALL_ARTICLES: Article[] = [
 
 export const GazetteAndCharity: React.FC = () => {
   const [selected404Article, setSelected404Article] = useState<Article | null>(null);
+  const [grantModalOpen, setGrantModalOpen] = useState<boolean>(false);
 
   const publishedArticles = useMemo(() => {
     const now = new Date();
@@ -360,16 +362,23 @@ export const GazetteAndCharity: React.FC = () => {
 
               <button
                 type="button"
-                onClick={() => alert("Grant application forms may be requested via the Clerk at clerk@hengineer.org.")}
-                className="w-full py-3 rounded bg-[#154c76] hover:bg-[#092e4a] text-white font-serif-guild text-xs uppercase tracking-wider font-bold transition-colors cursor-pointer"
+                onClick={() => setGrantModalOpen(true)}
+                className="w-full py-3 rounded bg-[#154c76] hover:bg-[#092e4a] text-white font-serif-guild text-xs uppercase tracking-wider font-bold transition-colors cursor-pointer flex items-center justify-center space-x-2 shadow-sm"
               >
-                Apply for Guild Educational Grant
+                <GraduationCap className="w-4 h-4 text-amber-400" />
+                <span>Apply for Guild Educational Grant</span>
               </button>
             </div>
           </div>
 
         </div>
       </div>
+
+      {/* Grant Application Modal */}
+      <GrantApplicationModal
+        isOpen={grantModalOpen}
+        onClose={() => setGrantModalOpen(false)}
+      />
 
       {/* Fake Retro 404 Not Found Modal */}
       {selected404Article && (

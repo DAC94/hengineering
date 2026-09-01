@@ -1,6 +1,7 @@
 import React from 'react';
 import { MegalithCalculator } from '../MegalithCalculator';
 import { SolsticeCanvas } from '../SolsticeCanvas';
+import { MasonsMarksGenerator } from '../MasonsMarksGenerator';
 import { Compass, Hammer } from 'lucide-react';
 
 export const CraftPage: React.FC = () => {
@@ -18,12 +19,17 @@ export const CraftPage: React.FC = () => {
         </h1>
         <div className="w-24 h-1 bg-amber-500 mx-auto mb-4" />
         <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto font-normal">
-          Interactive tools computing sarsen transport friction mechanics and solar alignment geometry.
+          Interactive tools computing sarsen transport friction mechanics, solar alignment geometry, and masons' mark registrations.
         </p>
       </div>
 
       {/* Sarsen Transport Calculator */}
       <MegalithCalculator />
+
+      {/* Megalithic Masons' Marks Generator */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <MasonsMarksGenerator />
+      </div>
 
       {/* Solstice Alignment Observatory */}
       <SolsticeCanvas />

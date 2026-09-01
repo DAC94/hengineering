@@ -1,7 +1,7 @@
 import React from 'react';
 import { HistoryTimeline } from '../HistoryTimeline';
 import { CoatOfArms } from '../CoatOfArms';
-import { Landmark, Flame, Scroll, ShieldCheck, ExternalLink, Building2, Shield } from 'lucide-react';
+import { Landmark, Flame, Scroll, ShieldCheck, ExternalLink, Building2, Shield, HardHat } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
   return (
@@ -103,14 +103,30 @@ export const AboutPage: React.FC = () => {
             <ShieldCheck className="w-6 h-6 text-amber-600 shrink-0" />
             <div>
               <h3 className="text-lg font-serif-guild font-bold">
-                Sister Livery Companies &amp; Industry Affiliations
+                Sister Livery Companies &amp; Civic Affiliations
               </h3>
-              <p className="text-xs text-slate-500">Official civic links with fellow City Livery Companies, British Military units, and natural stone federations.</p>
+              <p className="text-xs text-slate-500">Official civic links with fellow City Livery Companies, Construction Groups, British Military units, and natural stone federations.</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
+            {/* Construction Liveries Group */}
+            <div className="p-4 rounded bg-slate-50 border border-slate-200 space-y-2 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center space-x-2 text-[#154c76] font-serif-guild font-bold text-sm mb-1">
+                  <HardHat className="w-4 h-4 text-amber-600" />
+                  <span>Construction Liveries Group</span>
+                </div>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Member of the City of London Construction Liveries Group, uniting the Masons, Constructors, Paviors, Tylers &amp; Bricklayers, Carpenters, Engineers, and Megalith Builders to support built environment skills.
+                </p>
+              </div>
+              <div className="pt-2 border-t border-slate-200 text-[11px] font-semibold text-slate-500 font-mono">
+                City Civic Alliance • Construction Group
+              </div>
+            </div>
+
             {/* Sister Livery */}
             <div className="p-4 rounded bg-slate-50 border border-slate-200 space-y-2 flex flex-col justify-between">
               <div>
