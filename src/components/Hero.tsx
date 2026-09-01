@@ -1,11 +1,14 @@
-import React from 'react';
-import { Landmark, Award, BookOpen, ChevronRight, Sparkles, Compass } from 'lucide-react';
+import React, { useState } from 'react';
+import { Landmark, Award, BookOpen, ChevronRight, Sparkles, Compass, Play, Film } from 'lucide-react';
+import { RecruitmentVideoModal } from './RecruitmentVideoModal';
 
 interface HeroProps {
   onNavigate?: (tab: string, sectionId?: string) => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
+  const [videoModalOpen, setVideoModalOpen] = useState<boolean>(false);
+
   const handleAction = (tab: string, sectionId?: string) => {
     if (onNavigate) {
       onNavigate(tab, sectionId);
@@ -16,7 +19,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
     <section className="bg-white text-slate-800">
       
       {/* 1. Hero Image Banner with Elegant Overlay */}
-      <div className="relative w-full h-[420px] bg-gradient-to-r from-[#092e4a] via-[#154c76] to-[#092e4a] overflow-hidden border-b-4 border-amber-500 flex items-center justify-center">
+      <div className="relative w-full h-[450px] bg-gradient-to-r from-[#092e4a] via-[#154c76] to-[#092e4a] overflow-hidden border-b-4 border-amber-500 flex items-center justify-center">
         {/* Subtle Background Pattern */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.08)_0%,transparent_70%)]" />
         
@@ -48,8 +51,16 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             </button>
             <button
               type="button"
+              onClick={() => setVideoModalOpen(true)}
+              className="px-6 py-2.5 rounded bg-amber-400/20 hover:bg-amber-400/30 text-amber-300 border border-amber-400/60 font-serif-guild font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer flex items-center justify-center space-x-2"
+            >
+              <Play className="w-4 h-4 fill-amber-300 text-amber-300" />
+              <span>Watch Recruitment Film</span>
+            </button>
+            <button
+              type="button"
               onClick={() => handleAction('freedom', 'freedom')}
-              className="px-6 py-2.5 rounded bg-slate-900/80 hover:bg-slate-900 text-amber-200 border border-amber-400/40 font-serif-guild font-semibold text-xs uppercase tracking-wider transition-colors cursor-pointer"
+              className="px-6 py-2.5 rounded bg-slate-900/80 hover:bg-slate-900 text-slate-200 border border-slate-700 font-serif-guild font-semibold text-xs uppercase tracking-wider transition-colors cursor-pointer"
             >
               Apply for Freedom of the City
             </button>
@@ -73,12 +84,21 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
 
         {/* Hengineers at Work Feature Showcase */}
         <div className="bg-slate-50 p-6 sm:p-8 rounded-lg border border-slate-200 shadow-sm border-l-4 border-l-[#154c76] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-7 overflow-hidden rounded-lg border border-slate-300 shadow-md">
+          <div className="lg:col-span-7 overflow-hidden rounded-lg border border-slate-300 shadow-md relative group">
             <img
               src="/images/hengineers_work.jpg"
               alt="Master Hengineers and stonemasons hauling a 25-tonne sarsen stone on oak rollers"
-              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+              className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
             />
+            <button
+              type="button"
+              onClick={() => setVideoModalOpen(true)}
+              className="absolute inset-0 bg-slate-950/40 hover:bg-slate-950/20 transition-colors flex items-center justify-center group/play cursor-pointer"
+            >
+              <div className="p-4 rounded-full bg-amber-500 text-slate-950 shadow-xl group-hover/play:scale-110 transition-transform">
+                <Play className="w-8 h-8 fill-slate-950 ml-1" />
+              </div>
+            </button>
           </div>
 
           <div className="lg:col-span-5 space-y-4">
@@ -99,14 +119,24 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
               "Without the plumb bob, the lever, and the roller, no lintel shall rest true." — Guild Charter of 1100 AD
             </div>
 
-            <button
-              type="button"
-              onClick={() => handleAction('craft', 'calculator')}
-              className="inline-flex items-center space-x-2 text-xs font-bold text-[#154c76] hover:text-amber-600 font-serif-guild uppercase tracking-wider cursor-pointer"
-            >
-              <span>Explore Sarsen Transport Calculator</span>
-              <ChevronRight className="w-4 h-4 text-amber-600" />
-            </button>
+            <div className="pt-2 flex flex-col sm:flex-row gap-3">
+              <button
+                type="button"
+                onClick={() => setVideoModalOpen(true)}
+                className="inline-flex items-center space-x-2 px-4 py-2 rounded bg-[#154c76] text-white text-xs font-bold font-serif-guild uppercase tracking-wider hover:bg-[#092e4a] cursor-pointer"
+              >
+                <Film className="w-4 h-4 text-amber-400" />
+                <span>Watch Recruitment Film</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => handleAction('craft', 'calculator')}
+                className="inline-flex items-center space-x-2 text-xs font-bold text-[#154c76] hover:text-amber-600 font-serif-guild uppercase tracking-wider cursor-pointer py-2"
+              >
+                <span>Sarsen Calculator</span>
+                <ChevronRight className="w-4 h-4 text-amber-600" />
+              </button>
+            </div>
           </div>
         </div>
 
@@ -185,6 +215,13 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
         </div>
 
       </div>
+
+      {/* Recruitment Video Modal Theater */}
+      <RecruitmentVideoModal
+        isOpen={videoModalOpen}
+        onClose={() => setVideoModalOpen(false)}
+      />
+
     </section>
   );
 };
