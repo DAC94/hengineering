@@ -77,6 +77,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <button type="button" onClick={() => handleLinkClick('freedom')} className="hover:text-amber-300 transition-colors text-left cursor-pointer">Freedom of Guild &amp; Sheep Drive</button>
               </li>
               <li>
+                <button type="button" onClick={() => handleLinkClick('youth')} className="hover:text-amber-300 transition-colors text-left cursor-pointer font-bold text-amber-300">Young Freemen (Under 35s)</button>
+              </li>
+              <li>
+                <button type="button" onClick={() => handleLinkClick('events')} className="hover:text-amber-300 transition-colors text-left cursor-pointer">Civic Events &amp; Services</button>
+              </li>
+              <li>
                 <button type="button" onClick={() => handleLinkClick('news')} className="hover:text-amber-300 transition-colors text-left cursor-pointer">Educational Grants &amp; News</button>
               </li>
               <li>

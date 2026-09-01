@@ -9,6 +9,7 @@ import { CourtPage } from './components/pages/CourtPage';
 import { CraftPage } from './components/pages/CraftPage';
 import { BanquetPage } from './components/pages/BanquetPage';
 import { FreedomPage } from './components/pages/FreedomPage';
+import { YouthPage } from './components/pages/YouthPage';
 import { EventsCalendar } from './components/EventsCalendar';
 import { NewsPage } from './components/pages/NewsPage';
 import { HallPage } from './components/pages/HallPage';
@@ -45,6 +46,8 @@ export const App: React.FC = () => {
         return <BanquetPage onNavigate={handleNavigate} />;
       case 'freedom':
         return <FreedomPage />;
+      case 'youth':
+        return <YouthPage />;
       case 'events':
         return <EventsCalendar />;
       case 'news':

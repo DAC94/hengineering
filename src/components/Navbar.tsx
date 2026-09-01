@@ -62,6 +62,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onNavigate, onOpenPor
         { name: 'Common Hall Elections', tab: 'freedom', sectionId: 'commonhall' },
       ],
     },
+    { name: 'Young Freemen', tab: 'youth' },
     { name: 'Events Calendar', tab: 'events' },
     { name: 'News & Philanthropy', tab: 'news' },
     { name: 'Megalithic Hall Hire', tab: 'hall' },
@@ -95,10 +96,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onNavigate, onOpenPor
           <div className="flex items-center space-x-3">
             <button
               type="button"
-              onClick={() => handleNavClick('freedom', 'freedom')}
+              onClick={() => handleNavClick('youth')}
               className="px-2.5 py-1 rounded bg-amber-600 hover:bg-amber-500 text-slate-950 font-semibold text-[11px] transition-colors cursor-pointer"
             >
-              Become a Member
+              Young Freemen (Under 35s)
             </button>
             <button
               type="button"
