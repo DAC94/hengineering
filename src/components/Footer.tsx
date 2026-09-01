@@ -1,5 +1,6 @@
 import React from 'react';
 import { CoatOfArms } from './CoatOfArms';
+import { VisitorCounter } from './VisitorCounter';
 import { MapPin, Phone, Mail, Globe, ArrowUp } from 'lucide-react';
 
 interface FooterProps {
@@ -42,10 +43,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               The Worshipful Company of Megalith Builders (WCoMB) is one of the Livery Companies of the City of London. Our livery represents sarsen stone engineering, archaeo-astronomy, and structural conservation, working to support education and charities in the City and nationwide.
             </p>
 
-            <div className="text-xs text-amber-300 font-mono flex items-center space-x-1.5">
+            <div className="text-xs text-amber-300 font-mono flex items-center space-x-1.5 pb-2">
               <Globe className="w-4 h-4 text-amber-400" />
               <span>Official Website: <strong>hengineer.org</strong></span>
             </div>
+
+            {/* Retro Early 2000s Visitor Counter */}
+            <VisitorCounter />
           </div>
 
           {/* Col 2: Navigation Menu (3 Cols) */}
@@ -55,28 +59,28 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </h4>
             <ul className="space-y-1.5 text-xs text-slate-300">
               <li>
-                <button type="button" onClick={() => handleLinkClick('home')} className="hover:text-amber-300 transition-colors text-left">Home</button>
+                <button type="button" onClick={() => handleLinkClick('home')} className="hover:text-amber-300 transition-colors text-left cursor-pointer">Home</button>
               </li>
               <li>
-                <button type="button" onClick={() => handleLinkClick('about')} className="hover:text-amber-300 transition-colors text-left">About Us &amp; 1100 Charter</button>
+                <button type="button" onClick={() => handleLinkClick('about')} className="hover:text-amber-300 transition-colors text-left cursor-pointer">About Us &amp; 1100 Charter</button>
               </li>
               <li>
-                <button type="button" onClick={() => handleLinkClick('court')} className="hover:text-amber-300 transition-colors text-left">The Court &amp; Officers</button>
+                <button type="button" onClick={() => handleLinkClick('court')} className="hover:text-amber-300 transition-colors text-left cursor-pointer">The Court &amp; Officers</button>
               </li>
               <li>
-                <button type="button" onClick={() => handleLinkClick('craft')} className="hover:text-amber-300 transition-colors text-left">Hengineering Craft &amp; Observatory</button>
+                <button type="button" onClick={() => handleLinkClick('craft')} className="hover:text-amber-300 transition-colors text-left cursor-pointer">Hengineering Craft &amp; Observatory</button>
               </li>
               <li>
-                <button type="button" onClick={() => handleLinkClick('banquet')} className="hover:text-amber-300 transition-colors text-left">Solstice Banquet &amp; Wine Cellar</button>
+                <button type="button" onClick={() => handleLinkClick('banquet')} className="hover:text-amber-300 transition-colors text-left cursor-pointer">Solstice Banquet &amp; Wine Cellar</button>
               </li>
               <li>
-                <button type="button" onClick={() => handleLinkClick('freedom')} className="hover:text-amber-300 transition-colors text-left">Freedom of Guild &amp; Sheep Drive</button>
+                <button type="button" onClick={() => handleLinkClick('freedom')} className="hover:text-amber-300 transition-colors text-left cursor-pointer">Freedom of Guild &amp; Sheep Drive</button>
               </li>
               <li>
-                <button type="button" onClick={() => handleLinkClick('news')} className="hover:text-amber-300 transition-colors text-left">Educational Grants &amp; News</button>
+                <button type="button" onClick={() => handleLinkClick('news')} className="hover:text-amber-300 transition-colors text-left cursor-pointer">Educational Grants &amp; News</button>
               </li>
               <li>
-                <button type="button" onClick={() => handleLinkClick('hall')} className="hover:text-amber-300 transition-colors text-left">Megalithic Hall Hire</button>
+                <button type="button" onClick={() => handleLinkClick('hall')} className="hover:text-amber-300 transition-colors text-left cursor-pointer">Megalithic Hall Hire</button>
               </li>
             </ul>
           </div>
@@ -117,7 +121,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <button
               type="button"
               onClick={scrollToTop}
-              className="p-2 rounded bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-300 transition-colors"
+              className="p-2 rounded bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-300 transition-colors cursor-pointer"
               aria-label="Scroll to top"
             >
               <ArrowUp className="w-4 h-4" />
