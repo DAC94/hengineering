@@ -34,7 +34,7 @@ export const CourtOfAssistants: React.FC = () => {
       role: 'Junior Warden & Youth Chair',
       name: 'Ms. Cordelia Sterling, MEng',
       title: 'Chair of Next Gen Hengineers',
-      bio: 'Late-twenties structural engineer pioneering youth membership recruitment, digital stone modeling, and modernizing Guild traditions to secure the Livery’s next millennium.',
+      bio: 'Partner at Arup Heavy Structures & Founder of the Next Gen Network. Specialist in parametric stone modeling and young stonemason indentures.',
       badge: 'Junior Warden & Youth Network Chair',
       photo: '/images/officer_freya_lintel.jpg',
       initials: 'CS',
