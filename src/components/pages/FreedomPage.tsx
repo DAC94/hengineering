@@ -21,8 +21,8 @@ export const FreedomPage: React.FC = () => {
         </p>
       </div>
 
-      {/* Special Lore Block: The Annual London Bridge Lintel & Sheep Drive Notice */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* London Bridge Sheep Drive Notice */}
+      <div id="sheepdrive" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-amber-50/70 p-6 sm:p-8 rounded-lg border border-amber-200 border-l-4 border-l-amber-600 shadow-sm space-y-4">
           <div className="flex items-center space-x-3 text-[#154c76]">
             <Compass className="w-6 h-6 text-amber-600 shrink-0" />

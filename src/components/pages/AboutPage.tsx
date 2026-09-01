@@ -1,6 +1,6 @@
 import React from 'react';
 import { HistoryTimeline } from '../HistoryTimeline';
-import { Landmark, ShieldAlert, Flame, BookOpen, Scroll } from 'lucide-react';
+import { Landmark, Flame, Scroll } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
   return (
@@ -21,11 +21,12 @@ export const AboutPage: React.FC = () => {
         </p>
       </div>
 
-      {/* Special Lore Block 1: 1515 Precedence Dispute */}
+      {/* Special Lore Block 1 & 2 */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           
-          <div className="bg-white p-6 sm:p-8 rounded-lg border border-slate-200 shadow-sm border-t-4 border-t-[#154c76] space-y-4">
+          {/* 1515 Precedence Dispute */}
+          <div id="dispute1515" className="bg-white p-6 sm:p-8 rounded-lg border border-slate-200 shadow-sm border-t-4 border-t-[#154c76] space-y-4">
             <div className="flex items-center space-x-3 text-[#154c76]">
               <Scroll className="w-6 h-6 text-amber-600 shrink-0" />
               <h3 className="text-lg font-serif-guild font-bold">
@@ -40,8 +41,8 @@ export const AboutPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Special Lore Block 2: 1666 Great Fire Survival */}
-          <div className="bg-white p-6 sm:p-8 rounded-lg border border-slate-200 shadow-sm border-t-4 border-t-amber-500 space-y-4">
+          {/* 1666 Great Fire Survival */}
+          <div id="fire1666" className="bg-white p-6 sm:p-8 rounded-lg border border-slate-200 shadow-sm border-t-4 border-t-amber-500 space-y-4">
             <div className="flex items-center space-x-3 text-[#154c76]">
               <Flame className="w-6 h-6 text-amber-600 shrink-0" />
               <h3 className="text-lg font-serif-guild font-bold">

@@ -18,55 +18,67 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onNavigate, onOpenPor
       name: 'About Us',
       tab: 'about',
       dropdown: [
-        { name: 'Our History & Charters', tab: 'about' },
-        { name: '1515 Precedence Dispute', tab: 'about' },
-        { name: '1666 Great Fire Survival', tab: 'about' },
+        { name: 'Our History & Charters', tab: 'about', sectionId: 'history' },
+        { name: '1515 Precedence Dispute', tab: 'about', sectionId: 'dispute1515' },
+        { name: '1666 Great Fire Survival', tab: 'about', sectionId: 'fire1666' },
       ],
     },
     {
       name: 'The Court',
       tab: 'court',
       dropdown: [
-        { name: 'The Master & Wardens', tab: 'court' },
-        { name: 'Court of Assistants', tab: 'court' },
-        { name: 'Beadle’s Staff & Regalia', tab: 'court' },
+        { name: 'The Master & Wardens', tab: 'court', sectionId: 'court' },
+        { name: 'Court of Assistants', tab: 'court', sectionId: 'court' },
+        { name: 'Beadle’s Staff & Regalia', tab: 'court', sectionId: 'beadle' },
       ],
     },
     {
       name: 'Hengineering Craft',
       tab: 'craft',
       dropdown: [
-        { name: 'Sarsen Transport Calculator', tab: 'craft' },
-        { name: 'Solstice Observatory', tab: 'craft' },
+        { name: 'Sarsen Transport Calculator', tab: 'craft', sectionId: 'calculator' },
+        { name: 'Solstice Observatory', tab: 'craft', sectionId: 'alignment' },
       ],
     },
     {
       name: 'Solstice Banquet & Cellar',
       tab: 'banquet',
       dropdown: [
-        { name: '4-Course State Menu', tab: 'banquet' },
-        { name: 'The Cellar Ledger', tab: 'banquet' },
-        { name: 'Loving Cup Ceremony', tab: 'banquet' },
+        { name: '4-Course State Menu', tab: 'banquet', sectionId: 'menu' },
+        { name: 'The Cellar Ledger', tab: 'banquet', sectionId: 'cellar' },
+        { name: 'Loving Cup Ceremony', tab: 'banquet', sectionId: 'lovingcup' },
       ],
     },
     {
       name: 'Freedom of Guild',
       tab: 'freedom',
       dropdown: [
-        { name: 'Freeman Examination', tab: 'freedom' },
-        { name: 'Print Certificate', tab: 'freedom' },
-        { name: 'London Bridge Sheep Drive', tab: 'freedom' },
+        { name: 'Freeman Examination', tab: 'freedom', sectionId: 'freedom' },
+        { name: 'Print Certificate', tab: 'freedom', sectionId: 'freedom' },
+        { name: 'London Bridge Sheep Drive', tab: 'freedom', sectionId: 'sheepdrive' },
       ],
     },
     { name: 'News & Philanthropy', tab: 'news' },
     { name: 'Megalithic Hall Hire', tab: 'hall' },
   ];
 
-  const handleNavClick = (tab: string) => {
+  const handleNavClick = (tab: string, sectionId?: string) => {
     onNavigate(tab);
     setMobileMenuOpen(false);
     setActiveDropdown(null);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (sectionId) {
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }, 120);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -91,7 +103,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onNavigate, onOpenPor
           <div className="flex items-center space-x-3">
             <button
               type="button"
-              onClick={() => handleNavClick('freedom')}
+              onClick={() => handleNavClick('freedom', 'freedom')}
               className="px-2.5 py-1 rounded bg-amber-600 hover:bg-amber-500 text-slate-950 font-semibold text-[11px] transition-colors cursor-pointer"
             >
               Become a Member
@@ -185,7 +197,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onNavigate, onOpenPor
                       <li key={sub.name}>
                         <button
                           type="button"
-                          onClick={() => handleNavClick(sub.tab)}
+                          onClick={() => handleNavClick(sub.tab, sub.sectionId)}
                           className="block w-full text-left px-4 py-2 hover:bg-slate-100 hover:text-[#154c76] font-medium cursor-pointer"
                         >
                           {sub.name}
@@ -220,7 +232,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onNavigate, onOpenPor
                     <button
                       key={sub.name}
                       type="button"
-                      onClick={() => handleNavClick(sub.tab)}
+                      onClick={() => handleNavClick(sub.tab, sub.sectionId)}
                       className="block w-full text-left py-1 hover:text-[#154c76]"
                     >
                       {sub.name}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { CourtOfAssistants } from '../CourtOfAssistants';
-import { Compass, ShieldCheck, Award, Sparkles } from 'lucide-react';
+import { Compass, Award } from 'lucide-react';
 
 export const CourtPage: React.FC = () => {
   return (
@@ -24,8 +24,8 @@ export const CourtPage: React.FC = () => {
       {/* Main Officers Profiles */}
       <CourtOfAssistants />
 
-      {/* Special Lore Block: Beadle's Silver Staff of Office (1742) */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Beadle's Staff of Office (1742) */}
+      <div id="beadle" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-slate-50 p-6 sm:p-8 rounded-lg border border-slate-200 border-l-4 border-l-amber-500 shadow-sm space-y-4">
           <div className="flex items-center space-x-3 text-[#154c76]">
             <Award className="w-6 h-6 text-amber-600 shrink-0" />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BanquetMenu } from '../BanquetMenu';
-import { Wine, ShieldCheck, Heart, Sparkles } from 'lucide-react';
+import { Wine, Sparkles } from 'lucide-react';
 
 export const BanquetPage: React.FC = () => {
   return (
@@ -24,8 +24,8 @@ export const BanquetPage: React.FC = () => {
       {/* Main Banquet Menu & Cellar Component */}
       <BanquetMenu />
 
-      {/* Special Lore Block: The Ceremonial Loving Cup Protocol */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Loving Cup Protocol */}
+      <div id="lovingcup" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-slate-50 p-6 sm:p-8 rounded-lg border border-slate-200 border-l-4 border-l-[#154c76] shadow-sm space-y-4">
           <div className="flex items-center space-x-3 text-[#154c76]">
             <Sparkles className="w-6 h-6 text-amber-600 shrink-0" />
