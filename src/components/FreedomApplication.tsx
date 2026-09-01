@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import { Award, Printer, RefreshCw } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { CoatOfArms } from './CoatOfArms';
-import { Award, Printer, RefreshCw } from 'lucide-react';
 
 export const FreedomApplication: React.FC = () => {
   const [currentStep, setCurrentStep] = useState<'intro' | 'quiz' | 'certificate'>('intro');
@@ -207,11 +207,11 @@ export const FreedomApplication: React.FC = () => {
 
                 <div className="pt-6 grid grid-cols-2 gap-8 text-center text-xs font-serif-guild border-t border-[#b89327]/40 max-w-lg mx-auto">
                   <div>
-                    <div className="font-serif-guild text-base italic font-bold text-[#422c04]">Sir Alistair Trilithon</div>
+                    <div className="font-serif-guild text-base italic font-bold text-[#422c04]">Sir Alistair Montgomery</div>
                     <div className="text-[10px] text-[#735409] uppercase tracking-wider mt-1">Master Hengineer</div>
                   </div>
                   <div>
-                    <div className="font-serif-guild text-base italic font-bold text-[#422c04]">Septimus Megalith, Esq.</div>
+                    <div className="font-serif-guild text-base italic font-bold text-[#422c04]">Septimus Howard, Esq.</div>
                     <div className="text-[10px] text-[#735409] uppercase tracking-wider mt-1">Clerk to the Guild</div>
                   </div>
                 </div>

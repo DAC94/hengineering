@@ -1,87 +1,119 @@
 import React from 'react';
-import { Calendar, Scroll, ShieldCheck, Sparkles, Award, Landmark, CheckCircle } from 'lucide-react';
+import { History } from 'lucide-react';
 
 export const HistoryTimeline: React.FC = () => {
   const events = [
     {
       year: 'c. 2500 BC',
-      title: 'Foundation on Salisbury Plain',
-      description: 'The ancient ancestors of the Hengineers raise the 25-tonne Sarsen Trilithons at Stonehenge, establishing tongue-and-groove mortise & tenon joints and timber lever mechanics.',
-      highlight: 'First Megalithic Charter Established',
-    },
-    {
-      year: '540 AD',
-      title: 'King Arthur’s Lintel Court',
-      description: 'Guild Court Assistants advise Celtic chieftains on constructing acoustic stone circles and ramparts across Britain, Wales, and Armorica.',
-      highlight: 'Bluestone Acoustic Calibration',
+      title: 'First Assembly of Salisbury Plain Builders',
+      description: 'Ancient stone masons gather at the Marlborough Downs to formulate the fundamental laws of lintel balancing, tenon joints, and solar alignment.',
+      tag: 'Prehistoric Foundation',
     },
     {
       year: '1100 AD',
-      title: 'Royal Charter of Incorporation',
-      description: 'King Henry I grants a Royal Charter to "The Worshipful Company of Megalith Builders" in the City of London, establishing precedence at Time Immemorial (Livery No. 115).',
-      highlight: 'Incorporated in City of London',
+      title: 'Royal Charter of King Henry I',
+      description: 'King Henry I grants the Guild of Megalith Builders a Royal Charter, confirming ancient rights to haul sarsen stones across the Thames without toll.',
+      tag: 'Royal Charter',
+    },
+    {
+      year: '1342 AD',
+      title: 'Gresham Street Hall Constructed',
+      description: 'The first stone Megalithic Hall is erected in the City of London, complete with deep subterranean vaults for storing lead plumb bobs.',
+      tag: 'Guildhall Built',
+    },
+    {
+      year: '1515 AD',
+      title: 'Aldermanic Order of Precedence',
+      description: 'The Court of Aldermen sets the Livery Order of Precedence. The Megalith Builders maintain silent precedence at Time Immemorial.',
+      tag: 'City Precedence',
     },
     {
       year: '1666 AD',
-      title: 'The Great Fire Load-Testing',
-      description: 'Following the Great Fire of London, Guild Master Masons evaluate Portland stone density alongside Sir Christopher Wren for St. Paul’s Cathedral foundations.',
-      highlight: 'City Reconstruction Duty',
+      title: 'The Great Fire of London',
+      description: 'Megalithic Hall upper wooden timbers burn, but the subterranean Sarsen Vaults survive intact, preserving medieval charter chests.',
+      tag: 'Great Fire Survival',
     },
     {
-      year: '1851 AD',
-      title: 'The Great Exhibition Demonstration',
-      description: 'Guild Wardens demonstrate frictionless tallow-lubricated oak rollers at Hyde Park’s Crystal Palace, moving a 30-tonne monolith with only 12 pullers.',
-      highlight: 'Victorian Mechanical Triumph',
+      year: '1912 AD',
+      title: 'Modern Archaeo-Engineering Revival',
+      description: 'Under Master Sir Percival Harwood, Kt, the Guild incorporates modern civil engineering practices while safeguarding megalithic heritage.',
+      tag: 'Modern Era',
+    },
+    {
+      year: '1938 AD',
+      title: 'Stonehenge Restoration Consultation',
+      description: 'The Court of Assistants provides structural advice on re-erecting Fallen Trilithon No. 56 at Salisbury Plain.',
+      tag: 'Heritage Protection',
+    },
+    {
+      year: '1984 AD',
+      title: 'First Female Master Installed',
+      description: 'Dame Beatrice Cavendish, DBE becomes the first female Master Hengineer in the Guild’s 4,000-year recorded history.',
+      tag: 'Historic Election',
     },
     {
       year: '2026 AD',
-      title: 'Digital Revival & hengineer.org',
-      description: 'The Worshipful Company launches its digital portal at hengineer.org, expanding educational grants, stone masonry apprenticeships, and online Freedom of the City.',
-      highlight: 'Present Day Hengineering',
+      title: 'Livery Precedence Roll Confirmation',
+      description: 'The Worshipful Company formally registers at Livery No. 115 on the official City of London Livery Companies roll.',
+      tag: 'Modern Precedence',
     },
   ];
 
   return (
-    <section id="history" className="py-16 bg-slate-50 border-t border-slate-200">
+    <div id="history" className="bg-slate-50 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
+        {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded bg-[#154c76]/10 text-[#154c76] text-xs font-serif-guild font-bold uppercase tracking-wider mb-2">
-            <Scroll className="w-4 h-4 text-[#154c76]" />
-            <span>Guild Heritage &amp; Charter</span>
+            <History className="w-4 h-4 text-[#154c76]" />
+            <span>Four Millennia of History</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold font-serif-guild text-[#154c76] mb-3">
-            Our History &amp; Royal Charter
+            Chronological History &amp; Key Milestones
           </h2>
           <div className="w-20 h-1 bg-amber-500 mx-auto mb-4" />
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Spanning over four millennia, the Worshipful Company has evolved from the ancient stone circle builders of Neolithic Britain to an incorporated City of London Livery Company supporting modern structural craft and education.
+            From the Neolithic erecters of Salisbury Plain to 21st-century City Livery precedence.
           </p>
         </div>
 
-        {/* Timeline Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {events.map((item) => (
-            <div key={item.year} className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm border-t-4 border-t-[#154c76] hover:shadow-md transition-shadow">
-              <span className="inline-block px-2.5 py-0.5 rounded bg-amber-100 text-amber-900 font-mono text-xs font-bold mb-3">
-                {item.year}
-              </span>
-              <h3 className="text-lg font-serif-guild font-bold text-[#154c76] mb-2">
-                {item.title}
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed mb-4">
-                {item.description}
-              </p>
-              <div className="flex items-center space-x-1.5 text-[11px] font-semibold text-amber-700 pt-3 border-t border-slate-100">
-                <CheckCircle className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-                <span>{item.highlight}</span>
+        {/* Timeline Items */}
+        <div className="relative border-l-2 border-[#154c76]/30 ml-4 sm:ml-32 space-y-8">
+          {events.map((evt) => (
+            <div key={evt.year} className="relative pl-6 sm:pl-8 group">
+              
+              {/* Year Badge on Left for Desktop */}
+              <div className="sm:absolute sm:-left-36 sm:top-0 sm:w-28 text-left sm:text-right font-serif-guild font-bold text-amber-800 text-sm sm:text-base mb-1 sm:mb-0">
+                {evt.year}
               </div>
+
+              {/* Marker Circle */}
+              <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-[#154c76] border-2 border-white shadow group-hover:bg-amber-500 transition-colors" />
+
+              {/* Card Content */}
+              <div className="bg-white p-5 rounded-lg border border-slate-200 shadow-sm border-t-2 border-t-[#154c76] space-y-2">
+                <div className="flex justify-between items-center">
+                  <span className="text-[10px] font-bold uppercase tracking-wider bg-amber-50 text-amber-900 px-2 py-0.5 rounded">
+                    {evt.tag}
+                  </span>
+                  <span className="text-xs text-slate-400 font-mono sm:hidden">{evt.year}</span>
+                </div>
+                
+                <h3 className="text-base font-serif-guild font-bold text-[#154c76]">
+                  {evt.title}
+                </h3>
+                
+                <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                  {evt.description}
+                </p>
+              </div>
+
             </div>
           ))}
         </div>
 
       </div>
-    </section>
+    </div>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { BookOpen, GraduationCap, HeartHandshake, FileText, ArrowRight, Sparkles, AlertTriangle, X, Terminal } from 'lucide-react';
+import { BookOpen, GraduationCap, HeartHandshake, FileText, ArrowRight, Sparkles, AlertTriangle, Terminal } from 'lucide-react';
 
 interface Article {
   id: string;
@@ -54,9 +54,9 @@ const ALL_ARTICLES: Article[] = [
     year: 2025,
     month: 6,
     monthName: 'June 2025',
-    title: 'Sir Alistair Trilithon Installed as Master Hengineer for 2025–2026',
+    title: 'Sir Alistair Montgomery Installed as Master Hengineer for 2025–2026',
     category: 'Guild Governance',
-    excerpt: 'Sir Alistair Trilithon, FIME was formally sworn in as Master Hengineer at a ceremony held at Megalithic Hall in the City of London.',
+    excerpt: 'Sir Alistair Montgomery, FIME was formally sworn in as Master Hengineer at a ceremony held at Megalithic Hall in the City of London.',
     author: 'The Clerk',
     docPath: '/news/archives/2025/doc_master_installation.asp',
   },
@@ -67,7 +67,7 @@ const ALL_ARTICLES: Article[] = [
     monthName: 'November 2025',
     title: '1998 Vintage Cask Mead Declared Mature by Renter Warden',
     category: 'Cellar News',
-    excerpt: 'Renter Warden Lord Bartholomew Bluestone completed the cellar audit of the 1998 Solstice Cask Mead batch, approving its release for Banquets.',
+    excerpt: 'Renter Warden Lord Bartholomew Stirling completed the cellar audit of the 1998 Solstice Cask Mead batch, approving its release for Banquets.',
     author: 'Cellar Committee',
     docPath: '/news/archives/2025/doc_cellar_mead_98.asp',
   },
@@ -79,7 +79,7 @@ const ALL_ARTICLES: Article[] = [
     monthName: 'February 2026',
     title: 'City Livery Briefing & Midsummer Solstice Banquet Announced',
     category: 'Livery Movement',
-    excerpt: 'Master Hengineer Sir Alistair Trilithon welcomed over 150 members and civic guests to announce the upcoming Solstice Banquet at Megalithic Hall.',
+    excerpt: 'Master Hengineer Sir Alistair Montgomery welcomed over 150 members and civic guests to announce the upcoming Solstice Banquet at Megalithic Hall.',
     author: 'The Master',
     docPath: '/news/archives/2026/doc_briefing_2026.asp',
   },
@@ -135,7 +135,7 @@ const ALL_ARTICLES: Article[] = [
     monthName: 'July 2027',
     title: 'Common Hall Lord Mayor Proxy Ballot Results Certified',
     category: 'Civic Elections',
-    excerpt: 'Clerk Septimus Megalith certified the proxy votes cast by sworn Liverymen for the upcoming Michaelmas election of the Lord Mayor of London.',
+    excerpt: 'Clerk Septimus Howard certified the proxy votes cast by sworn Liverymen for the upcoming Michaelmas election of the Lord Mayor of London.',
     author: 'The Clerk',
     docPath: '/news/archives/2027/doc_ballot_2027.asp',
   },
@@ -158,7 +158,7 @@ const ALL_ARTICLES: Article[] = [
     monthName: 'January 2028',
     title: 'Subterranean Mead Cellar Inventory Reaches 30-Year High',
     category: 'Cellar News',
-    excerpt: 'Renter Warden Lord Bartholomew Bluestone reported that the Guild mead reserves now exceed 500 bottles of vintage Wiltshire wildflower batch.',
+    excerpt: 'Renter Warden Lord Bartholomew Stirling reported that the Guild mead reserves now exceed 500 bottles of vintage Wiltshire wildflower batch.',
     author: 'Cellar Committee',
     docPath: '/news/archives/2028/doc_mead_reserve_2028.asp',
   },
@@ -169,7 +169,7 @@ const ALL_ARTICLES: Article[] = [
     monthName: 'May 2028',
     title: 'Master Hengineer Keynote Speaker at St Paul’s Conservation Summit',
     category: 'Livery Movement',
-    excerpt: 'Sir Alistair Trilithon delivered a lecture under Wren’s dome detailing mortise stone preservation techniques used since medieval times.',
+    excerpt: 'Sir Alistair Montgomery delivered a lecture under Wren’s dome detailing mortise stone preservation techniques used since medieval times.',
     author: 'The Master',
     docPath: '/news/archives/2028/doc_stpauls_summit.asp',
   },
@@ -213,9 +213,9 @@ const ALL_ARTICLES: Article[] = [
     year: 2030,
     month: 4,
     monthName: 'April 2030',
-    title: 'Megalithic Hall Great Trilithon Room Undergoes Hammerbeam Timber Polish',
+    title: 'Megalithic Hall Great Room Undergoes Hammerbeam Timber Polish',
     category: 'Guild Heritage',
-    excerpt: 'The 17th-century hammerbeam roof of the Great Trilithon Room was restored using beeswax and linseed oil ahead of the Midsummer Solstice Banquet.',
+    excerpt: 'The 17th-century hammerbeam roof of the Great Room was restored using beeswax and linseed oil ahead of the Midsummer Solstice Banquet.',
     author: 'House Committee',
     docPath: '/news/archives/2030/doc_roof_restoration.asp',
   },
@@ -235,11 +235,10 @@ const ALL_ARTICLES: Article[] = [
 export const GazetteAndCharity: React.FC = () => {
   const [selected404Article, setSelected404Article] = useState<Article | null>(null);
 
-  // Deterministically calculate published news based on current system date
   const publishedArticles = useMemo(() => {
     const now = new Date();
     const currentYear = now.getFullYear();
-    const currentMonth = now.getMonth() + 1; // 1-12
+    const currentMonth = now.getMonth() + 1;
 
     return ALL_ARTICLES.filter(
       (art) => art.year < currentYear || (art.year === currentYear && art.month <= currentMonth)

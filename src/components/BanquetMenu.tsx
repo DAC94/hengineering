@@ -122,7 +122,7 @@ export const BanquetMenu: React.FC<BanquetMenuProps> = ({ onNavigate }) => {
               type="button"
               onClick={() => setActiveTab('menu')}
               className={`px-5 py-2 rounded-md font-serif-guild text-xs font-bold uppercase tracking-wider transition-colors flex items-center space-x-2 cursor-pointer ${
-                activeTab === 'menu' ? 'bg-[#154c76] text-white shadow' : 'text-slate-600 hover:text-[#154c76]'
+                activeTab === 'menu' ? 'bg-[#154c76]' : 'text-slate-600 hover:text-[#154c76]'
               }`}
             >
               <UtensilsCrossed className="w-4 h-4" />
@@ -132,7 +132,7 @@ export const BanquetMenu: React.FC<BanquetMenuProps> = ({ onNavigate }) => {
               type="button"
               onClick={() => setActiveTab('cellar')}
               className={`px-5 py-2 rounded-md font-serif-guild text-xs font-bold uppercase tracking-wider transition-colors flex items-center space-x-2 cursor-pointer ${
-                activeTab === 'cellar' ? 'bg-[#154c76] text-white shadow' : 'text-slate-600 hover:text-[#154c76]'
+                activeTab === 'cellar' ? 'bg-[#154c76]' : 'text-slate-600 hover:text-[#154c76]'
               }`}
             >
               <Wine className="w-4 h-4" />
@@ -152,7 +152,7 @@ export const BanquetMenu: React.FC<BanquetMenuProps> = ({ onNavigate }) => {
                 Midsummer Solstice State Menu
               </h3>
               <p className="font-garamond italic text-sm text-slate-500 mt-1">
-                Hosted by Master Hengineer Sir Alistair Trilithon, FIME
+                Hosted by Master Hengineer Sir Alistair Montgomery, FIME
               </p>
             </div>
 
@@ -180,7 +180,7 @@ export const BanquetMenu: React.FC<BanquetMenuProps> = ({ onNavigate }) => {
             </div>
 
             <div className="mt-8 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-serif-guild">
-              <span>Banqueting Manager: Mr. Septimus Megalith, Esq.</span>
+              <span>Banqueting Manager: Mr. Septimus Howard, Esq.</span>
               <button
                 type="button"
                 onClick={() => onNavigate?.('hall')}
@@ -204,7 +204,7 @@ export const BanquetMenu: React.FC<BanquetMenuProps> = ({ onNavigate }) => {
                 Guild Wine &amp; Vintage Mead Inventory
               </h3>
               <p className="font-garamond italic text-sm text-slate-500 mt-1">
-                Under the Custody of Renter Warden Lord Bartholomew Bluestone, JP
+                Under the Custody of Renter Warden Lord Bartholomew Stirling, JP
               </p>
             </div>
 

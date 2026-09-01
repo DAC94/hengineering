@@ -5,48 +5,48 @@ export const CourtOfAssistants: React.FC = () => {
   const courtMembers = [
     {
       role: 'The Master Hengineer',
-      name: 'Sir Alistair Trilithon, FIME',
+      name: 'Sir Alistair Montgomery, FIME',
       title: 'Master for the Year 2025–2026',
       bio: 'Former Chief Archaeo-Engineer of Salisbury Plain. Specialist in lintel tenon friction and acoustic megalith resonance.',
       badge: 'Master for the Year 2025–2026',
       photo: '/images/officer_master_alistair.jpg',
-      initials: 'AT',
+      initials: 'AM',
     },
     {
       role: 'Upper Warden',
-      name: 'Dame Eleanor Mortise, KC',
+      name: 'Dame Eleanor Vance, KC',
       title: 'Upper Warden of the Court',
       bio: 'Senior Counsel for Ancient Stonework Rights. Author of "The Law of Unmoved Stones and Ancient Rights of Roller Passage".',
       badge: 'Sworn Liveryman & Upper Warden',
       photo: '/images/officer_eleanor_mortise.jpg',
-      initials: 'EM',
+      initials: 'EV',
     },
     {
       role: 'Renter Warden',
-      name: 'Lord Bartholomew Bluestone, JP',
+      name: 'Lord Bartholomew Stirling, JP',
       title: 'Renter Warden & Treasurer',
       bio: 'Oversees the Guild Charitable Trust Fund, providing £250,000 annually in stone masonry apprenticeships.',
       badge: 'Sworn Liveryman & Renter Warden',
       photo: '/images/officer_bartholomew_bluestone.jpg',
-      initials: 'BB',
+      initials: 'BS',
     },
     {
       role: 'Junior Warden & Youth Chair',
-      name: 'Ms. Freya Lintel, MEng',
+      name: 'Ms. Freya Sterling, MEng',
       title: 'Chair of Next Gen Hengineers',
       bio: 'Late-twenties structural engineer pioneering youth membership recruitment, digital stone modeling, and modernizing Guild traditions to secure the Livery’s next millennium.',
       badge: 'Junior Warden & Youth Network Chair',
       photo: '/images/officer_freya_lintel.jpg',
-      initials: 'FL',
+      initials: 'FS',
     },
     {
       role: 'The Clerk to the Guild',
-      name: 'Septimus Megalith, Esq.',
+      name: 'Septimus Howard, Esq.',
       title: 'Clerk to the Worshipful Company',
       bio: 'Manages Guildhall business, Freedom of the City enrollments, and Megalithic Hall venue reservations.',
       badge: 'Clerk to the Worshipful Company',
       photo: '/images/officer_septimus_megalith.jpg',
-      initials: 'SM',
+      initials: 'SH',
     },
   ];
 
@@ -84,7 +84,6 @@ export const CourtOfAssistants: React.FC = () => {
                     alt={officer.name}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     onError={(e) => {
-                      // Fallback if image is pending photo shoot
                       const parent = e.currentTarget.parentElement;
                       if (parent) {
                         e.currentTarget.style.display = 'none';
@@ -130,7 +129,7 @@ export const CourtOfAssistants: React.FC = () => {
               "We do not merely stack stones; we align mortal ambition with the celestial geometry of the cosmos."
             </blockquote>
             <cite className="font-serif-guild text-xs uppercase tracking-widest text-slate-300 not-italic block font-bold">
-              — Sir Alistair Trilithon, FIME (Master Hengineer)
+              — Sir Alistair Montgomery, FIME (Master Hengineer)
             </cite>
           </div>
         </div>

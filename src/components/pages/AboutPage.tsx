@@ -49,8 +49,8 @@ export const AboutPage: React.FC = () => {
             </p>
 
             <div className="p-4 bg-slate-50 rounded border border-slate-200 text-xs text-slate-700 space-y-2 font-mono">
-              <p><strong className="text-[#154c76] font-serif-guild">Arms (Blazon):</strong> Azure, on a chevron Gules fimbriated Or between two plumb-bobs in chief of the third, a sarsen stone trilithon Or.</p>
-              <p><strong className="text-[#154c76] font-serif-guild">Crest:</strong> Upon a helm with a torse Or and Gules, a Salisbury Great Bustard statant proper, holding in its beak a mason's stone chisel Or.</p>
+              <p><strong className="text-[#154c76] font-serif-guild">Arms (Blazon):</strong> Azure, a sarsen stone trilithon Or, in chief two plumb-bobs of the second.</p>
+              <p><strong className="text-[#154c76] font-serif-guild">Crest:</strong> Upon a helm with a torse Or and Azure, a golden sarsen trilithon proper.</p>
               <p><strong className="text-[#154c76] font-serif-guild">Motto:</strong> <span className="font-garamond italic text-amber-900 font-bold">"Saxa Ligamus, Saecula Stabilimus"</span> (We bind the stones, we stabilize the ages).</p>
             </div>
           </div>
@@ -70,7 +70,7 @@ export const AboutPage: React.FC = () => {
               </h3>
             </div>
             <p className="text-xs text-slate-600 leading-relaxed font-normal">
-              In 1515, when Lord Mayor Sir William Butler established the formal Order of Precedence for City Livery Companies, the Megalith Builders were absent from the Court roll. Guild records reveal Master Hengineer William Lintel was away supervising royal stone vaulting at Windsor Castle.
+              In 1515, when Lord Mayor Sir William Butler established the formal Order of Precedence for City Livery Companies, the Megalith Builders were absent from the Court roll. Guild records reveal Master Hengineer William Stanhope was away supervising royal stone vaulting at Windsor Castle.
             </p>
             <div className="p-3 rounded bg-amber-50 border border-amber-200 text-xs text-amber-900 font-garamond italic font-semibold">
               "The Guild maintained silent precedence at Time Immemorial until its modern revival at Livery No. 115."
