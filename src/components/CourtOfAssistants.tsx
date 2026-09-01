@@ -18,7 +18,7 @@ export const CourtOfAssistants: React.FC = () => {
       title: 'Upper Warden of the Court',
       bio: 'Senior Counsel for Ancient Stonework Rights. Author of "The Law of Unmoved Stones and Ancient Rights of Roller Passage".',
       badge: 'Sworn Liveryman & Upper Warden',
-      photo: '/images/officer_eleanor_mortise.jpg',
+      photo: '/images/officer_eleanor_vance.jpg',
       initials: 'EV',
     },
     {
@@ -36,7 +36,7 @@ export const CourtOfAssistants: React.FC = () => {
       title: 'Chair of Next Gen Hengineers',
       bio: 'Partner at Arup Heavy Structures & Founder of the Next Gen Network. Specialist in parametric stone modeling and young stonemason indentures.',
       badge: 'Junior Warden & Youth Network Chair',
-      photo: '/images/officer_freya_lintel.jpg',
+      photo: '/images/officer_cordelia_sterling.jpg',
       initials: 'CS',
     },
     {
@@ -45,7 +45,7 @@ export const CourtOfAssistants: React.FC = () => {
       title: 'Clerk to the Worshipful Company',
       bio: 'Manages Guildhall business, Freedom of the City enrollments, and Megalithic Hall venue reservations.',
       badge: 'Clerk to the Worshipful Company',
-      photo: '/images/officer_septimus_megalith.jpg',
+      photo: '/images/officer_arthur_howard.jpg',
       initials: 'AH',
     },
   ];
