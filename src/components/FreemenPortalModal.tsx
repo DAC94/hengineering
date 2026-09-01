@@ -124,8 +124,7 @@ export const FreemenPortalModal: React.FC<FreemenPortalModalProps> = ({ isOpen, 
               
               <div className="text-center mb-6">
                 <p className="text-xs text-slate-600">
-                  Please enter your Guild Freeman credentials to log in. <br />
-                  <span className="font-mono text-[11px] text-amber-800 font-bold">Demo Login: admin / admin</span>
+                  Please enter your sworn Freeman or Liveryman credentials to access private Court records and ballots.
                 </p>
               </div>
 
@@ -142,7 +141,7 @@ export const FreemenPortalModal: React.FC<FreemenPortalModalProps> = ({ isOpen, 
                   <input
                     type="text"
                     required
-                    placeholder="e.g. admin"
+                    placeholder="Enter Guild username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     className="w-full pl-9 pr-3 py-2 rounded bg-slate-50 border border-slate-300 text-slate-900 text-xs focus:outline-none focus:border-[#154c76]"
@@ -157,7 +156,7 @@ export const FreemenPortalModal: React.FC<FreemenPortalModalProps> = ({ isOpen, 
                   <input
                     type="password"
                     required
-                    placeholder="e.g. admin"
+                    placeholder="••••••••"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className="w-full pl-9 pr-3 py-2 rounded bg-slate-50 border border-slate-300 text-slate-900 text-xs focus:outline-none focus:border-[#154c76]"
