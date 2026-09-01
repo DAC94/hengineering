@@ -41,20 +41,22 @@ export const CoatOfArms: React.FC<CoatOfArmsProps> = ({ className = '', size = '
         <path d="M 20 50 Q 5 20 40 10 Q 70 30 100 15 Q 130 30 160 10 Q 195 20 180 50 Q 190 90 170 120 Q 150 100 130 110" fill="url(#heraldicRed)" stroke="url(#heraldicGold)" strokeWidth="1.5" />
         <path d="M 20 50 Q 10 90 30 120 Q 50 100 70 110" fill="url(#heraldicRed)" stroke="url(#heraldicGold)" strokeWidth="1.5" />
 
-        {/* Crest: Salisbury Great Bustard Bird atop Helm */}
-        <g id="crest-bird">
-          {/* Bird Body */}
-          <path d="M 92 18 Q 85 10 95 4 Q 105 4 108 10 Q 112 18 104 22 Z" fill="url(#heraldicGold)" stroke="#453205" strokeWidth="1" />
-          {/* Beak with Chisel */}
-          <path d="M 93 8 L 86 6 L 86 8 L 92 10 Z" fill="#ffffff" stroke="#453205" strokeWidth="0.8" />
-          {/* Wing */}
-          <path d="M 98 12 Q 105 14 102 20 Q 96 18 98 12 Z" fill="url(#heraldicRed)" />
+        {/* Crest: Salisbury Great Bustard Bird atop Knight's Torse */}
+        <g id="crest-great-bustard">
+          {/* Bird Body & Tail */}
+          <path d="M 85 24 Q 75 14 88 5 Q 102 3 112 10 Q 118 18 108 24 Z" fill="url(#heraldicGold)" stroke="#453205" strokeWidth="1.2" />
+          {/* Bird Head & Beak */}
+          <path d="M 88 10 Q 82 8 80 11 Q 84 14 88 13 Z" fill="url(#heraldicGold)" stroke="#453205" strokeWidth="1" />
+          {/* Mason's Stone Chisel in Beak */}
+          <rect x="70" y="9" width="12" height="3" rx="0.5" transform="rotate(-15 70 9)" fill="#ffffff" stroke="#453205" strokeWidth="0.8" />
+          {/* Wing Feathers */}
+          <path d="M 94 10 Q 106 12 102 21 Q 92 18 94 10 Z" fill="url(#heraldicRed)" stroke="url(#heraldicGold)" strokeWidth="0.8" />
         </g>
 
         {/* Knight Helmet / Torse Base */}
-        <rect x="82" y="20" width="36" height="20" rx="3" fill="url(#heraldicGold)" stroke="#453205" strokeWidth="1.5" />
-        <path d="M 88 26 H 112" stroke="#453205" strokeWidth="1.5" />
-        <path d="M 88 32 H 112" stroke="#453205" strokeWidth="1.5" />
+        <rect x="80" y="24" width="40" height="18" rx="3" fill="url(#heraldicGold)" stroke="#453205" strokeWidth="1.5" />
+        <path d="M 86 30 H 114" stroke="#453205" strokeWidth="1.5" />
+        <path d="M 86 36 H 114" stroke="#453205" strokeWidth="1.5" />
 
         {/* Main Escutcheon Shield (Field Azure) */}
         <path
