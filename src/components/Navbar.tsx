@@ -58,7 +58,7 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center space-x-4">
             <span className="flex items-center space-x-1.5 text-slate-300">
               <Phone className="w-3.5 h-3.5 text-amber-400" />
-              <span>020 7329 2189</span>
+              <span>020 7946 0115</span>
             </span>
             <span className="hidden sm:inline text-slate-500">•</span>
             <span className="flex items-center space-x-1.5 text-slate-300">

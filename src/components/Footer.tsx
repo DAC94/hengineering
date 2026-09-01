@@ -70,7 +70,7 @@ export const Footer: React.FC = () => {
               </p>
               <p className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>Tel: 020 7329 2189</span>
+                <span>Tel: 020 7946 0115</span>
               </p>
               <p className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-amber-400 shrink-0" />

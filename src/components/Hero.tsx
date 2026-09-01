@@ -1,6 +1,5 @@
 import React from 'react';
-import { CoatOfArms } from './CoatOfArms';
-import { Landmark, Award, BookOpen, ChevronRight, ShieldCheck, Sparkles } from 'lucide-react';
+import { Landmark, Award, BookOpen, ChevronRight, Sparkles, Compass } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
@@ -46,21 +45,59 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* 2. Welcome Statement & Feature Grid */}
-      <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+      {/* 2. Welcome Statement & Hengineering Image Feature */}
+      <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 space-y-12">
         
         {/* Welcome Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-extrabold font-serif-guild text-[#154c76] mb-3">
             Welcome to The Worshipful Company of Megalith Builders
           </h2>
           <div className="w-24 h-1 bg-amber-500 mx-auto mb-4" />
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
-            The Worshipful Company of Megalith Builders (*The Hengineers*) is one of the ancient Livery Companies of the City of London. Incorporating all branches of megalithic stone engineering, lintel lifting, archaeo-astronomy, and structural conservation, our Livery supports charitable education, grants, and civic duties in the City and nationwide.
+            The Worshipful Company of Megalith Builders (<em>The Hengineers</em>) is one of the ancient Livery Companies of the City of London. Incorporating all branches of megalithic stone engineering, lintel lifting, archaeo-astronomy, and structural conservation, our Livery supports charitable education, grants, and civic duties in the City and nationwide.
           </p>
         </div>
 
-        {/* 3 Main Highlight Tiles (Matching WCoBM homepage layout) */}
+        {/* Hengineers at Work Feature Showcase */}
+        <div className="bg-slate-50 p-6 sm:p-8 rounded-lg border border-slate-200 shadow-sm border-l-4 border-l-[#154c76] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7 overflow-hidden rounded-lg border border-slate-300 shadow-md">
+            <img
+              src="/images/hengineers_work.jpg"
+              alt="Master Hengineers and stonemasons hauling a 25-tonne sarsen stone on oak rollers"
+              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+
+          <div className="lg:col-span-5 space-y-4">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded bg-[#154c76]/10 text-[#154c76] text-xs font-serif-guild font-bold uppercase tracking-wider">
+              <Compass className="w-4 h-4 text-amber-600" />
+              <span>The Craft of Hengineering</span>
+            </div>
+
+            <h3 className="text-xl font-serif-guild font-bold text-[#154c76]">
+              Mastery of Sarsen Mechanics &amp; Timber Rollers
+            </h3>
+
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+              For over four millennia, Guild masons have perfected the physics of transporting monolithic stones weighing up to 25 tonnes across Salisbury Plain using seasoned oak rollers, counter-weight levers, and hemp rigging.
+            </p>
+
+            <div className="p-3 bg-white rounded border border-slate-200 text-xs text-amber-900 font-garamond italic font-semibold">
+              "Without the plumb bob, the lever, and the roller, no lintel shall rest true." — Guild Charter of 1100 AD
+            </div>
+
+            <a
+              href="#calculator"
+              className="inline-flex items-center space-x-2 text-xs font-bold text-[#154c76] hover:text-amber-600 font-serif-guild uppercase tracking-wider"
+            >
+              <span>Explore Sarsen Transport Calculator</span>
+              <ChevronRight className="w-4 h-4 text-amber-600" />
+            </a>
+          </div>
+        </div>
+
+        {/* 3 Main Highlight Tiles */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
           {/* Tile 1: About & History */}

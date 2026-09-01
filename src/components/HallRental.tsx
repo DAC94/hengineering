@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Building2, Calendar, Users, Wine, CheckCircle, Send } from 'lucide-react';
+import { Building2, Calendar, Users, Wine, CheckCircle, Send, MapPin } from 'lucide-react';
 
 export const HallRental: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -31,8 +31,31 @@ export const HallRental: React.FC = () => {
           </h2>
           <div className="w-20 h-1 bg-amber-500 mx-auto mb-4" />
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Host banquets, corporate symposia, and formal dinners at Megalithic Hall, Gresham Street, City of London EC2.
+            Host banquets, corporate symposia, and formal dinners at Megalithic Hall, Gresham Street, City of London EC2V.
           </p>
+        </div>
+
+        {/* Hall Exterior Photo Showcase Banner */}
+        <div className="mb-12 rounded-lg overflow-hidden border border-slate-300 shadow-md relative group">
+          <img
+            src="/images/megalithic_hall.jpg"
+            alt="Facade of Megalithic Hall on Gresham Street, City of London"
+            className="w-full h-[360px] object-cover group-hover:scale-102 transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#092e4a]/90 via-[#092e4a]/40 to-transparent flex items-end p-6 sm:p-8">
+            <div className="text-white space-y-1">
+              <div className="flex items-center space-x-2 text-amber-300 text-xs font-serif-guild uppercase tracking-widest">
+                <MapPin className="w-4 h-4 text-amber-400" />
+                <span>Gresham Street, City of London EC2V 7HH</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-serif-guild font-bold text-white">
+                Megalithic Hall Facade &amp; Courtyard
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-200 font-garamond italic max-w-2xl">
+                Historic stone masonry architecture, arched oak doors, and heraldic coat of arms situated in the heart of the City of London.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
