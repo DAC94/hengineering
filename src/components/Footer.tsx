@@ -2,9 +2,20 @@ import React from 'react';
 import { CoatOfArms } from './CoatOfArms';
 import { MapPin, Phone, Mail, Globe, ArrowUp } from 'lucide-react';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onNavigate?: (tab: string) => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleLinkClick = (tab: string) => {
+    if (onNavigate) {
+      onNavigate(tab);
+    }
+    scrollToTop();
   };
 
   return (
@@ -43,14 +54,30 @@ export const Footer: React.FC = () => {
               Quick Links
             </h4>
             <ul className="space-y-1.5 text-xs text-slate-300">
-              <li><a href="#" className="hover:text-amber-300 transition-colors">Home</a></li>
-              <li><a href="#history" className="hover:text-amber-300 transition-colors">About Us &amp; Our History</a></li>
-              <li><a href="#court" className="hover:text-amber-300 transition-colors">The Court &amp; Officers</a></li>
-              <li><a href="#calculator" className="hover:text-amber-300 transition-colors">Sarsen Transport Calculator</a></li>
-              <li><a href="#alignment" className="hover:text-amber-300 transition-colors">Solstice Observatory</a></li>
-              <li><a href="#freedom" className="hover:text-amber-300 transition-colors">Freedom of the City</a></li>
-              <li><a href="#gazette" className="hover:text-amber-300 transition-colors">Educational Grants &amp; News</a></li>
-              <li><a href="#hall" className="hover:text-amber-300 transition-colors">Megalithic Hall Hire</a></li>
+              <li>
+                <button type="button" onClick={() => handleLinkClick('home')} className="hover:text-amber-300 transition-colors text-left">Home</button>
+              </li>
+              <li>
+                <button type="button" onClick={() => handleLinkClick('about')} className="hover:text-amber-300 transition-colors text-left">About Us &amp; 1100 Charter</button>
+              </li>
+              <li>
+                <button type="button" onClick={() => handleLinkClick('court')} className="hover:text-amber-300 transition-colors text-left">The Court &amp; Officers</button>
+              </li>
+              <li>
+                <button type="button" onClick={() => handleLinkClick('craft')} className="hover:text-amber-300 transition-colors text-left">Hengineering Craft &amp; Observatory</button>
+              </li>
+              <li>
+                <button type="button" onClick={() => handleLinkClick('banquet')} className="hover:text-amber-300 transition-colors text-left">Solstice Banquet &amp; Wine Cellar</button>
+              </li>
+              <li>
+                <button type="button" onClick={() => handleLinkClick('freedom')} className="hover:text-amber-300 transition-colors text-left">Freedom of Guild &amp; Sheep Drive</button>
+              </li>
+              <li>
+                <button type="button" onClick={() => handleLinkClick('news')} className="hover:text-amber-300 transition-colors text-left">Educational Grants &amp; News</button>
+              </li>
+              <li>
+                <button type="button" onClick={() => handleLinkClick('hall')} className="hover:text-amber-300 transition-colors text-left">Megalithic Hall Hire</button>
+              </li>
             </ul>
           </div>
 

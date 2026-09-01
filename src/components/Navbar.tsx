@@ -3,55 +3,71 @@ import { CoatOfArms } from './CoatOfArms';
 import { Menu, X, Search, UserCheck, Phone, Mail, ChevronDown } from 'lucide-react';
 
 interface NavbarProps {
+  activeTab: string;
+  onNavigate: (tab: string) => void;
   onOpenPortal?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenPortal }) => {
+export const Navbar: React.FC<NavbarProps> = ({ activeTab, onNavigate, onOpenPortal }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   const navItems = [
-    { name: 'Home', href: '#' },
+    { name: 'Home', tab: 'home' },
     {
       name: 'About Us',
-      href: '#history',
+      tab: 'about',
       dropdown: [
-        { name: 'Our History', href: '#history' },
-        { name: 'Royal Charter (1100 AD)', href: '#history' },
-        { name: 'Coat of Arms', href: '#' },
+        { name: 'Our History & Charters', tab: 'about' },
+        { name: '1515 Precedence Dispute', tab: 'about' },
+        { name: '1666 Great Fire Survival', tab: 'about' },
       ],
     },
     {
       name: 'The Court',
-      href: '#court',
+      tab: 'court',
       dropdown: [
-        { name: 'The Master & Wardens', href: '#court' },
-        { name: 'Court of Assistants', href: '#court' },
-        { name: 'The Clerk', href: '#court' },
+        { name: 'The Master & Wardens', tab: 'court' },
+        { name: 'Court of Assistants', tab: 'court' },
+        { name: 'Beadle’s Staff & Regalia', tab: 'court' },
       ],
     },
     {
       name: 'Hengineering Craft',
-      href: '#calculator',
+      tab: 'craft',
       dropdown: [
-        { name: 'Megalith Calculator', href: '#calculator' },
-        { name: 'Solstice Observatory', href: '#alignment' },
+        { name: 'Sarsen Transport Calculator', tab: 'craft' },
+        { name: 'Solstice Observatory', tab: 'craft' },
       ],
     },
     {
-      name: 'Education & Charity',
-      href: '#gazette',
+      name: 'Solstice Banquet & Cellar',
+      tab: 'banquet',
       dropdown: [
-        { name: 'Stone Mason Grants', href: '#gazette' },
-        { name: 'Indentured Apprenticeships', href: '#gazette' },
-        { name: 'Research Papers', href: '#gazette' },
+        { name: '4-Course State Menu', tab: 'banquet' },
+        { name: 'The Cellar Ledger', tab: 'banquet' },
+        { name: 'Loving Cup Ceremony', tab: 'banquet' },
       ],
     },
-    { name: 'Freedom of Guild', href: '#freedom' },
-    { name: 'Solstice Banquet & Cellar', href: '#menu' },
-    { name: 'Megalithic Hall Hire', href: '#hall' },
-    { name: 'Contact Us', href: '#footer' },
+    {
+      name: 'Freedom of Guild',
+      tab: 'freedom',
+      dropdown: [
+        { name: 'Freeman Examination', tab: 'freedom' },
+        { name: 'Print Certificate', tab: 'freedom' },
+        { name: 'London Bridge Sheep Drive', tab: 'freedom' },
+      ],
+    },
+    { name: 'News & Philanthropy', tab: 'news' },
+    { name: 'Megalithic Hall Hire', tab: 'hall' },
   ];
+
+  const handleNavClick = (tab: string) => {
+    onNavigate(tab);
+    setMobileMenuOpen(false);
+    setActiveDropdown(null);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <header className="w-full bg-white shadow-md border-b border-slate-200 sticky top-0 z-50">
@@ -73,12 +89,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPortal }) => {
           </div>
 
           <div className="flex items-center space-x-3">
-            <a
-              href="#freedom"
-              className="px-2.5 py-1 rounded bg-amber-600 hover:bg-amber-500 text-slate-950 font-semibold text-[11px] transition-colors"
+            <button
+              type="button"
+              onClick={() => handleNavClick('freedom')}
+              className="px-2.5 py-1 rounded bg-amber-600 hover:bg-amber-500 text-slate-950 font-semibold text-[11px] transition-colors cursor-pointer"
             >
               Become a Member
-            </a>
+            </button>
             <button
               type="button"
               onClick={onOpenPortal}
@@ -97,7 +114,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPortal }) => {
         <div className="flex items-center justify-between">
           
           {/* Logo Crest + Guild Title */}
-          <a href="#" className="flex items-center space-x-4 group">
+          <button
+            type="button"
+            onClick={() => handleNavClick('home')}
+            className="flex items-center space-x-4 group text-left cursor-pointer"
+          >
             <CoatOfArms size="md" className="group-hover:scale-105 transition-transform" />
             <div>
               <h1 className="font-serif-guild text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#154c76] tracking-tight leading-tight">
@@ -107,7 +128,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPortal }) => {
                 "The Hengineers" • City of London Livery Company No. 115
               </p>
             </div>
-          </a>
+          </button>
 
           {/* Search Box on Desktop */}
           <div className="hidden lg:flex items-center space-x-2">
@@ -142,26 +163,33 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPortal }) => {
             {navItems.map((item) => (
               <li
                 key={item.name}
-                className="relative group py-3 px-3.5 hover:bg-[#092e4a] cursor-pointer transition-colors"
+                className={`relative group py-3 px-3 cursor-pointer transition-colors ${
+                  activeTab === item.tab ? 'bg-[#092e4a] text-amber-300 border-b-2 border-amber-400' : 'hover:bg-[#092e4a]'
+                }`}
                 onMouseEnter={() => setActiveDropdown(item.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <a href={item.href} className="flex items-center space-x-1 text-slate-100 group-hover:text-amber-300">
+                <button
+                  type="button"
+                  onClick={() => handleNavClick(item.tab)}
+                  className="flex items-center space-x-1 text-slate-100 group-hover:text-amber-300 cursor-pointer"
+                >
                   <span>{item.name}</span>
                   {item.dropdown && <ChevronDown className="w-3 h-3 text-amber-400/80" />}
-                </a>
+                </button>
 
                 {/* Dropdown Menu */}
                 {item.dropdown && activeDropdown === item.name && (
                   <ul className="absolute top-full left-0 w-56 bg-white text-slate-800 shadow-xl border-t-2 border-amber-500 py-2 space-y-1 rounded-b font-sans normal-case text-xs z-50">
                     {item.dropdown.map((sub) => (
                       <li key={sub.name}>
-                        <a
-                          href={sub.href}
-                          className="block px-4 py-2 hover:bg-slate-100 hover:text-[#154c76] font-medium"
+                        <button
+                          type="button"
+                          onClick={() => handleNavClick(sub.tab)}
+                          className="block w-full text-left px-4 py-2 hover:bg-slate-100 hover:text-[#154c76] font-medium cursor-pointer"
                         >
                           {sub.name}
-                        </a>
+                        </button>
                       </li>
                     ))}
                   </ul>
@@ -177,24 +205,26 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPortal }) => {
         <div className="lg:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-6 space-y-2 text-sm font-medium text-slate-700">
           {navItems.map((item) => (
             <div key={item.name} className="border-b border-slate-100 pb-1">
-              <a
-                href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="block py-2 text-[#154c76] font-bold"
+              <button
+                type="button"
+                onClick={() => handleNavClick(item.tab)}
+                className={`block w-full text-left py-2 font-bold ${
+                  activeTab === item.tab ? 'text-amber-600' : 'text-[#154c76]'
+                }`}
               >
                 {item.name}
-              </a>
+              </button>
               {item.dropdown && (
                 <div className="pl-4 space-y-1 text-xs text-slate-600">
                   {item.dropdown.map((sub) => (
-                    <a
+                    <button
                       key={sub.name}
-                      href={sub.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1 hover:text-[#154c76]"
+                      type="button"
+                      onClick={() => handleNavClick(sub.tab)}
+                      className="block w-full text-left py-1 hover:text-[#154c76]"
                     >
                       {sub.name}
-                    </a>
+                    </button>
                   ))}
                 </div>
               )}
