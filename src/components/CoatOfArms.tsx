@@ -37,28 +37,17 @@ export const CoatOfArms: React.FC<CoatOfArmsProps> = ({ className = '', size = '
           </linearGradient>
         </defs>
 
-        {/* Mantling Leaves (Red & Gold) */}
+        {/* Mantling Leaves at Top/Sides */}
         <path d="M 20 50 Q 5 20 40 10 Q 70 30 100 15 Q 130 30 160 10 Q 195 20 180 50 Q 190 90 170 120 Q 150 100 130 110" fill="url(#heraldicRed)" stroke="url(#heraldicGold)" strokeWidth="1.5" />
         <path d="M 20 50 Q 10 90 30 120 Q 50 100 70 110" fill="url(#heraldicRed)" stroke="url(#heraldicGold)" strokeWidth="1.5" />
 
-        {/* Crest: Salisbury Great Bustard Bird atop Knight's Torse */}
-        <g id="crest-great-bustard">
-          {/* Bird Body & Tail */}
-          <path d="M 85 24 Q 75 14 88 5 Q 102 3 112 10 Q 118 18 108 24 Z" fill="url(#heraldicGold)" stroke="#453205" strokeWidth="1.2" />
-          {/* Bird Head & Beak */}
-          <path d="M 88 10 Q 82 8 80 11 Q 84 14 88 13 Z" fill="url(#heraldicGold)" stroke="#453205" strokeWidth="1" />
-          {/* Mason's Stone Chisel in Beak */}
-          <rect x="70" y="9" width="12" height="3" rx="0.5" transform="rotate(-15 70 9)" fill="#ffffff" stroke="#453205" strokeWidth="0.8" />
-          {/* Wing Feathers */}
-          <path d="M 94 10 Q 106 12 102 21 Q 92 18 94 10 Z" fill="url(#heraldicRed)" stroke="url(#heraldicGold)" strokeWidth="0.8" />
-        </g>
+        {/* Knight Helmet / Crown Crest */}
+        <rect x="82" y="10" width="36" height="24" rx="4" fill="url(#heraldicGold)" stroke="#453205" strokeWidth="1.5" />
+        <path d="M 90 18 H 110" stroke="#453205" strokeWidth="2" />
+        <path d="M 90 24 H 110" stroke="#453205" strokeWidth="2" />
+        <circle cx="100" cy="6" r="6" fill="url(#heraldicRed)" stroke="url(#heraldicGold)" strokeWidth="1.5" />
 
-        {/* Knight Helmet / Torse Base */}
-        <rect x="80" y="24" width="40" height="18" rx="3" fill="url(#heraldicGold)" stroke="#453205" strokeWidth="1.5" />
-        <path d="M 86 30 H 114" stroke="#453205" strokeWidth="1.5" />
-        <path d="M 86 36 H 114" stroke="#453205" strokeWidth="1.5" />
-
-        {/* Main Escutcheon Shield (Field Azure) */}
+        {/* Main Escutcheon Shield */}
         <path
           d="M 40 40 L 160 40 L 160 120 Q 160 190 100 215 Q 40 190 40 120 Z"
           fill="url(#heraldicNavy)"
@@ -75,7 +64,7 @@ export const CoatOfArms: React.FC<CoatOfArmsProps> = ({ className = '', size = '
           strokeDasharray="4 2"
         />
 
-        {/* Red Chevron Gules Across Shield */}
+        {/* Red Chevron Across Shield */}
         <path
           d="M 40 110 L 100 65 L 160 110 L 160 130 L 100 85 L 40 130 Z"
           fill="url(#heraldicRed)"
@@ -84,22 +73,15 @@ export const CoatOfArms: React.FC<CoatOfArmsProps> = ({ className = '', size = '
         />
 
         {/* Sarsen Trilithon Monolith Icon in Center */}
-        <rect x="72" y="102" width="11" height="58" fill="url(#heraldicGold)" stroke="#453205" strokeWidth="1" />
-        <rect x="117" y="102" width="11" height="58" fill="url(#heraldicGold)" stroke="#453205" strokeWidth="1" />
-        <rect x="62" y="90" width="76" height="15" rx="2" fill="url(#heraldicGold)" stroke="#453205" strokeWidth="1.5" />
+        <rect x="70" y="100" width="12" height="60" fill="url(#heraldicGold)" stroke="#453205" strokeWidth="1" />
+        <rect x="118" y="100" width="12" height="60" fill="url(#heraldicGold)" stroke="#453205" strokeWidth="1" />
+        <rect x="60" y="88" width="80" height="16" rx="2" fill="url(#heraldicGold)" stroke="#453205" strokeWidth="1.5" />
 
-        {/* Two Gold Plumb Bobs in Chief */}
-        <g id="plumb-bobs">
-          {/* Left Plumb Bob */}
-          <line x1="72" y1="48" x2="72" y2="58" stroke="url(#heraldicGold)" strokeWidth="1.5" />
-          <polygon points="72,66 67,58 77,58" fill="url(#heraldicGold)" stroke="#453205" strokeWidth="0.8" />
-          
-          {/* Right Plumb Bob */}
-          <line x1="128" y1="48" x2="128" y2="58" stroke="url(#heraldicGold)" strokeWidth="1.5" />
-          <polygon points="128,66 123,58 133,58" fill="url(#heraldicGold)" stroke="#453205" strokeWidth="0.8" />
-        </g>
+        {/* Crossed Plumb Bobs on Upper Shield */}
+        <circle cx="75" cy="58" r="4" fill="url(#heraldicGold)" />
+        <circle cx="125" cy="58" r="4" fill="url(#heraldicGold)" />
 
-        {/* Motto Ribbon Scroll at Bottom */}
+        {/* Scroll Banner at Bottom */}
         <path
           d="M 10 215 Q 100 240 190 215 L 175 235 Q 100 248 25 235 Z"
           fill="url(#heraldicGold)"
