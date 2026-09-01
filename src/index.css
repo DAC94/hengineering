@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-navy-primary: #154c76;
+    --color-navy-dark: #092e4a;
+    --color-gold-accent: #c59b27;
+    --color-gold-light: #f5e6b3;
+    --color-crimson: #721c24;
+    --color-bg-light: #f8fafc;
+    --color-white: #ffffff;
+  }
+
+  body {
+    background-color: #f8fafc;
+    color: #1e293b;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif-guild {
+    font-family: 'Cinzel', 'Georgia', serif;
+  }
+
+  .font-garamond {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+  }
+}
+
+/* Authentic City of London Livery Styling */
+.bg-navy-guild {
+  background-color: #154c76;
+}
+
+.bg-navy-dark {
+  background-color: #092e4a;
+}
+
+.text-navy-guild {
+  color: #154c76;
+}
+
+.text-gold-guild {
+  color: #c59b27;
+}
+
+.border-gold-guild {
+  border-color: #c59b27;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #d4af37 0%, #c59b27 50%, #997a15 100%);
+}
+
+.card-livery {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-top: 4px solid #154c76;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s ease-in-out;
+}
+
+.card-livery:hover {
+  box-shadow: 0 10px 25px -5px rgba(21, 76, 118, 0.12);
+  transform: translateY(-2px);
+}
+
+.card-gold-top {
+  border-top-color: #c59b27;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #154c76;
+}
+
+/* Print Only the Certificate when Printing */
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+
+  #printable-certificate,
+  #printable-certificate * {
+    visibility: visible !important;
+  }
+
+  #printable-certificate {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 2.5rem !important;
+    box-shadow: none !important;
+    background-color: #faf5e6 !important;
+    border: 8px double #8a6b10 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  @page {
+    size: landscape;
+    margin: 1cm;
+  }
+}

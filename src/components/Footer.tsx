@@ -1,0 +1,104 @@
+import React from 'react';
+import { CoatOfArms } from './CoatOfArms';
+import { MapPin, Phone, Mail, Globe, ArrowUp } from 'lucide-react';
+
+export const Footer: React.FC = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <footer id="footer" className="bg-[#092e4a] text-slate-300 pt-16 pb-8 border-t-4 border-amber-500">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-slate-700">
+          
+          {/* Col 1: Summary (5 Cols) */}
+          <div className="md:col-span-5 space-y-4">
+            <div className="flex items-center space-x-3">
+              <CoatOfArms size="sm" />
+              <div>
+                <h3 className="font-serif-guild text-base font-bold text-amber-300">
+                  The Worshipful Company of Megalith Builders
+                </h3>
+                <p className="text-xs text-slate-300 font-garamond italic">
+                  "The Hengineers" • Livery Company No. 115
+                </p>
+              </div>
+            </div>
+
+            <p className="text-xs text-slate-300 leading-relaxed max-w-sm">
+              The Worshipful Company of Megalith Builders (WCoMB) is one of the Livery Companies of the City of London. Our livery represents sarsen stone engineering, archaeo-astronomy, and structural conservation, working to support education and charities in the City and nationwide.
+            </p>
+
+            <div className="text-xs text-amber-300 font-mono flex items-center space-x-1.5">
+              <Globe className="w-4 h-4 text-amber-400" />
+              <span>Official Website: <strong>hengineering.org</strong></span>
+            </div>
+          </div>
+
+          {/* Col 2: Navigation Menu (3 Cols) */}
+          <div className="md:col-span-3 space-y-3">
+            <h4 className="font-serif-guild font-bold text-amber-400 text-xs uppercase tracking-wider">
+              Quick Links
+            </h4>
+            <ul className="space-y-1.5 text-xs text-slate-300">
+              <li><a href="#" className="hover:text-amber-300 transition-colors">Home</a></li>
+              <li><a href="#history" className="hover:text-amber-300 transition-colors">About Us &amp; Our History</a></li>
+              <li><a href="#court" className="hover:text-amber-300 transition-colors">The Court &amp; Officers</a></li>
+              <li><a href="#calculator" className="hover:text-amber-300 transition-colors">Sarsen Transport Calculator</a></li>
+              <li><a href="#alignment" className="hover:text-amber-300 transition-colors">Solstice Observatory</a></li>
+              <li><a href="#freedom" className="hover:text-amber-300 transition-colors">Freedom of the City</a></li>
+              <li><a href="#gazette" className="hover:text-amber-300 transition-colors">Educational Grants &amp; News</a></li>
+              <li><a href="#hall" className="hover:text-amber-300 transition-colors">Megalithic Hall Hire</a></li>
+            </ul>
+          </div>
+
+          {/* Col 3: Address & Contact (4 Cols) */}
+          <div className="md:col-span-4 space-y-3">
+            <h4 className="font-serif-guild font-bold text-amber-400 text-xs uppercase tracking-wider">
+              Guildhall Office &amp; Contact
+            </h4>
+            <div className="text-xs text-slate-300 leading-relaxed space-y-2">
+              <p className="flex items-start space-x-2">
+                <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                <span>
+                  Worshipful Company of Megalith Builders<br />
+                  Megalithic Hall, Gresham Street<br />
+                  City of London, EC2V 7HH
+                </span>
+              </p>
+              <p className="flex items-center space-x-2">
+                <Phone className="w-4 h-4 text-amber-400 shrink-0" />
+                <span>Tel: 020 7329 2189</span>
+              </p>
+              <p className="flex items-center space-x-2">
+                <Mail className="w-4 h-4 text-amber-400 shrink-0" />
+                <span>Email: <a href="mailto:clerk@hengineering.org" className="underline hover:text-amber-300">clerk@hengineering.org</a></span>
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Copyright Bar */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 font-mono">
+          <p>© COPYRIGHT {new Date().getFullYear()} WCoMB, ALL RIGHTS RESERVED • hengineering.org</p>
+          
+          <div className="flex items-center space-x-4 mt-3 sm:mt-0">
+            <span>Saxa Ligamus, Saecula Stabilimus</span>
+            <button
+              type="button"
+              onClick={scrollToTop}
+              className="p-2 rounded bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-300 transition-colors"
+              aria-label="Scroll to top"
+            >
+              <ArrowUp className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  );
+};
