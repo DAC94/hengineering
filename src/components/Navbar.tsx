@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { CoatOfArms } from './CoatOfArms';
-import { Menu, X, Search, UserCheck, Shield, Phone, Mail, ChevronDown } from 'lucide-react';
+import { Menu, X, Search, UserCheck, Phone, Mail, ChevronDown } from 'lucide-react';
 
-export const Navbar: React.FC = () => {
+interface NavbarProps {
+  onOpenPortal?: () => void;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ onOpenPortal }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
@@ -44,6 +48,7 @@ export const Navbar: React.FC = () => {
       ],
     },
     { name: 'Freedom of Guild', href: '#freedom' },
+    { name: 'Solstice Banquet & Cellar', href: '#menu' },
     { name: 'Megalithic Hall Hire', href: '#hall' },
     { name: 'Contact Us', href: '#footer' },
   ];
@@ -74,13 +79,14 @@ export const Navbar: React.FC = () => {
             >
               Become a Member
             </a>
-            <a
-              href="#freedom"
-              className="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/40 text-[11px] transition-colors flex items-center space-x-1"
+            <button
+              type="button"
+              onClick={onOpenPortal}
+              className="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/40 text-[11px] transition-colors flex items-center space-x-1 cursor-pointer"
             >
               <UserCheck className="w-3.5 h-3.5 text-amber-400" />
               <span>Freemen's Portal</span>
-            </a>
+            </button>
           </div>
 
         </div>
