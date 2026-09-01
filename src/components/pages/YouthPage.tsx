@@ -6,7 +6,7 @@ interface Slide {
   title: string;
   location: string;
   description: string;
-  placeholderText: string;
+  imageSrc: string;
   tag: string;
 }
 
@@ -19,7 +19,7 @@ export const YouthPage: React.FC = () => {
       title: 'Great Room After-Party',
       location: 'Megalithic Hall • Gresham Street, City of London',
       description: 'Young Freemen and under-35 guests dancing in evening wear under the historic 17th-century hammerbeam roof following the Annual Solstice Dinner.',
-      placeholderText: '📷 [ PHOTO CAROUSEL PLACEHOLDER: Young Freemen Dancing at Megalithic Hall After-Party ]',
+      imageSrc: '/images/youth_dancing_hall.png',
       tag: 'City Socials',
     },
     {
@@ -27,16 +27,8 @@ export const YouthPage: React.FC = () => {
       title: 'Midsummer Solstice Sunrise Dance at Salisbury Plain',
       location: 'The Trilithons • Wiltshire Sanctuary',
       description: 'Young Hengineers celebrating the Midsummer solstice dawn with music and acoustic stone resonance amidst the ancient megaliths.',
-      placeholderText: '📷 [ PHOTO CAROUSEL PLACEHOLDER: Young Hengineers Dancing at Stonehenge Solstice Dawn ]',
+      imageSrc: '/images/youth_dancing_henge.png',
       tag: 'Fieldwork Socials',
-    },
-    {
-      id: 3,
-      title: 'Subterranean Vault Mead Tasting & DJ Night',
-      location: 'Sarsen Vaults • Megalithic Hall',
-      description: 'Late-night music and vintage mead tasting in the subterranean medieval stone vaults for young sworn Freemen.',
-      placeholderText: '📷 [ PHOTO CAROUSEL PLACEHOLDER: Subterranean Vaults DJ Night & Vintage Mead Bar ]',
-      tag: 'Vault Parties',
     },
   ];
 
@@ -47,7 +39,7 @@ export const YouthPage: React.FC = () => {
       title: 'Junior Warden & Committee Chair',
       bio: 'Partner at Arup Heavy Structures. Leads under-35 recruitment, parametric stone modeling initiatives, and Guild modernization.',
       email: 'cordelia.sterling@hengineer.org',
-      photo: '/images/officer_freya_lintel.jpg',
+      photo: '/images/officer_cordelia_sterling.png',
       initials: 'CS',
     },
     {
@@ -56,7 +48,7 @@ export const YouthPage: React.FC = () => {
       title: 'Deputy Chair of Next Gen Network',
       bio: 'Senior Associate at Heritage Stone Conservation UK. Coordinates young Freemen vault socials, solstice retreats, and apprentice mentorship.',
       email: 'julian.thorne@hengineer.org',
-      photo: '/images/officer_julian_thorne.jpg',
+      photo: '/images/officer_julian_thorne.png',
       initials: 'JT',
     },
   ];
@@ -87,7 +79,7 @@ export const YouthPage: React.FC = () => {
         </p>
       </div>
 
-      {/* Interactive Photo Carousel Placeholder */}
+      {/* Real Image Carousel */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-lg border border-slate-200 shadow-md overflow-hidden border-t-4 border-t-[#154c76]">
           
@@ -101,25 +93,27 @@ export const YouthPage: React.FC = () => {
             </span>
           </div>
 
-          {/* Carousel Frame */}
-          <div className="relative bg-slate-900 h-80 sm:h-96 flex items-center justify-center text-center p-6 text-slate-200">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.05)_0%,transparent_70%)]" />
+          {/* Carousel Frame displaying actual PNG image */}
+          <div className="relative bg-slate-900 h-80 sm:h-96 flex items-center justify-center overflow-hidden">
+            <img
+              src={slides[currentSlide].imageSrc}
+              alt={slides[currentSlide].title}
+              className="w-full h-full object-cover animate-fade-in"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
 
-            <div className="relative space-y-4 max-w-lg mx-auto">
+            {/* Overlay Info Card */}
+            <div className="absolute bottom-6 left-6 right-6 text-left space-y-2 text-white">
               <span className="inline-block px-3 py-1 rounded-full bg-amber-500 text-slate-950 font-serif-guild font-bold text-xs uppercase tracking-wider">
                 {slides[currentSlide].tag}
               </span>
-              
-              <div className="p-6 rounded-lg bg-slate-800/80 border-2 border-dashed border-amber-400/50 space-y-2">
-                <div className="text-amber-300 font-mono text-sm sm:text-base font-bold leading-snug">
-                  {slides[currentSlide].placeholderText}
-                </div>
-                <p className="text-xs text-slate-300 italic font-garamond">
-                  "{slides[currentSlide].description}"
-                </p>
-              </div>
-
-              <div className="text-xs text-slate-400 font-serif-guild font-bold">
+              <h3 className="text-lg sm:text-xl font-serif-guild font-bold text-amber-300">
+                {slides[currentSlide].title}
+              </h3>
+              <p className="text-xs text-slate-200 max-w-2xl leading-relaxed font-normal">
+                {slides[currentSlide].description}
+              </p>
+              <div className="text-[11px] text-slate-400 font-serif-guild font-bold">
                 📍 {slides[currentSlide].location}
               </div>
             </div>
@@ -128,7 +122,7 @@ export const YouthPage: React.FC = () => {
             <button
               type="button"
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-slate-800/80 hover:bg-amber-500 hover:text-slate-950 text-white transition-colors cursor-pointer border border-slate-700"
+              className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-slate-950/70 hover:bg-amber-500 hover:text-slate-950 text-white transition-colors cursor-pointer border border-slate-700 z-10"
               aria-label="Previous Slide"
             >
               <ChevronLeft className="w-6 h-6" />
@@ -136,7 +130,7 @@ export const YouthPage: React.FC = () => {
             <button
               type="button"
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-slate-800/80 hover:bg-amber-500 hover:text-slate-950 text-white transition-colors cursor-pointer border border-slate-700"
+              className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-slate-950/70 hover:bg-amber-500 hover:text-slate-950 text-white transition-colors cursor-pointer border border-slate-700 z-10"
               aria-label="Next Slide"
             >
               <ChevronRight className="w-6 h-6" />
