@@ -16,6 +16,22 @@ export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('home');
   const [portalOpen, setPortalOpen] = useState<boolean>(false);
 
+  const handleNavigate = (tab: string, sectionId?: string) => {
+    setActiveTab(tab);
+    if (sectionId) {
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }, 120);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   const renderActivePage = () => {
     switch (activeTab) {
       case 'about':
@@ -25,7 +41,7 @@ export const App: React.FC = () => {
       case 'craft':
         return <CraftPage />;
       case 'banquet':
-        return <BanquetPage />;
+        return <BanquetPage onNavigate={handleNavigate} />;
       case 'freedom':
         return <FreedomPage />;
       case 'news':
@@ -34,7 +50,7 @@ export const App: React.FC = () => {
         return <HallPage />;
       case 'home':
       default:
-        return <HomePage onNavigate={setActiveTab} />;
+        return <HomePage onNavigate={handleNavigate} />;
     }
   };
 
@@ -44,7 +60,7 @@ export const App: React.FC = () => {
         {/* Sticky Header Navbar */}
         <Navbar
           activeTab={activeTab}
-          onNavigate={setActiveTab}
+          onNavigate={handleNavigate}
           onOpenPortal={() => setPortalOpen(true)}
         />
 
@@ -55,7 +71,7 @@ export const App: React.FC = () => {
       </div>
 
       {/* Footer */}
-      <Footer onNavigate={setActiveTab} />
+      <Footer onNavigate={handleNavigate} />
 
       {/* Freemen's Portal Modal */}
       <FreemenPortalModal

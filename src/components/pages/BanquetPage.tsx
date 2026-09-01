@@ -2,7 +2,11 @@ import React from 'react';
 import { BanquetMenu } from '../BanquetMenu';
 import { Wine, Sparkles } from 'lucide-react';
 
-export const BanquetPage: React.FC = () => {
+interface BanquetPageProps {
+  onNavigate?: (tab: string, sectionId?: string) => void;
+}
+
+export const BanquetPage: React.FC<BanquetPageProps> = ({ onNavigate }) => {
   return (
     <div className="py-12 bg-white space-y-12">
       
@@ -22,7 +26,7 @@ export const BanquetPage: React.FC = () => {
       </div>
 
       {/* Main Banquet Menu & Cellar Component */}
-      <BanquetMenu />
+      <BanquetMenu onNavigate={onNavigate} />
 
       {/* Loving Cup Protocol */}
       <div id="lovingcup" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

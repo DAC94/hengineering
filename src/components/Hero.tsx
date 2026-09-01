@@ -1,7 +1,17 @@
 import React from 'react';
 import { Landmark, Award, BookOpen, ChevronRight, Sparkles, Compass } from 'lucide-react';
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  onNavigate?: (tab: string, sectionId?: string) => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
+  const handleAction = (tab: string, sectionId?: string) => {
+    if (onNavigate) {
+      onNavigate(tab, sectionId);
+    }
+  };
+
   return (
     <section className="bg-white text-slate-800">
       
@@ -29,18 +39,20 @@ export const Hero: React.FC = () => {
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row justify-center gap-3">
-            <a
-              href="#history"
-              className="px-6 py-2.5 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-serif-guild font-bold text-xs uppercase tracking-wider shadow transition-colors"
+            <button
+              type="button"
+              onClick={() => handleAction('about', 'history')}
+              className="px-6 py-2.5 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-serif-guild font-bold text-xs uppercase tracking-wider shadow transition-colors cursor-pointer"
             >
               Discover Our History
-            </a>
-            <a
-              href="#freedom"
-              className="px-6 py-2.5 rounded bg-slate-900/80 hover:bg-slate-900 text-amber-200 border border-amber-400/40 font-serif-guild font-semibold text-xs uppercase tracking-wider transition-colors"
+            </button>
+            <button
+              type="button"
+              onClick={() => handleAction('freedom', 'freedom')}
+              className="px-6 py-2.5 rounded bg-slate-900/80 hover:bg-slate-900 text-amber-200 border border-amber-400/40 font-serif-guild font-semibold text-xs uppercase tracking-wider transition-colors cursor-pointer"
             >
               Apply for Freedom of the City
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -87,13 +99,14 @@ export const Hero: React.FC = () => {
               "Without the plumb bob, the lever, and the roller, no lintel shall rest true." — Guild Charter of 1100 AD
             </div>
 
-            <a
-              href="#calculator"
-              className="inline-flex items-center space-x-2 text-xs font-bold text-[#154c76] hover:text-amber-600 font-serif-guild uppercase tracking-wider"
+            <button
+              type="button"
+              onClick={() => handleAction('craft', 'calculator')}
+              className="inline-flex items-center space-x-2 text-xs font-bold text-[#154c76] hover:text-amber-600 font-serif-guild uppercase tracking-wider cursor-pointer"
             >
               <span>Explore Sarsen Transport Calculator</span>
               <ChevronRight className="w-4 h-4 text-amber-600" />
-            </a>
+            </button>
           </div>
         </div>
 
@@ -113,13 +126,14 @@ export const Hero: React.FC = () => {
                 Incorporated by Royal Charter under King Henry I in 1100 AD, confirming ancient rights established at Salisbury Plain c. 2500 BC.
               </p>
             </div>
-            <a
-              href="#history"
-              className="text-xs font-bold text-[#154c76] hover:text-amber-600 flex items-center space-x-1 pt-2 border-t border-slate-100"
+            <button
+              type="button"
+              onClick={() => handleAction('about', 'history')}
+              className="text-xs font-bold text-[#154c76] hover:text-amber-600 flex items-center space-x-1 pt-2 border-t border-slate-100 cursor-pointer w-full text-left"
             >
               <span>Learn About Our Heritage</span>
               <ChevronRight className="w-4 h-4" />
-            </a>
+            </button>
           </div>
 
           {/* Tile 2: Freedom & Membership */}
@@ -135,13 +149,14 @@ export const Hero: React.FC = () => {
                 Pass the Guild Freeman Examination to earn your parchment Certificate of Freedom and join our fellowship of sarsen masons.
               </p>
             </div>
-            <a
-              href="#freedom"
-              className="text-xs font-bold text-[#154c76] hover:text-amber-600 flex items-center space-x-1 pt-2 border-t border-slate-100"
+            <button
+              type="button"
+              onClick={() => handleAction('freedom', 'freedom')}
+              className="text-xs font-bold text-[#154c76] hover:text-amber-600 flex items-center space-x-1 pt-2 border-t border-slate-100 cursor-pointer w-full text-left"
             >
               <span>Apply for Membership</span>
               <ChevronRight className="w-4 h-4" />
-            </a>
+            </button>
           </div>
 
           {/* Tile 3: Education & Grants */}
@@ -157,13 +172,14 @@ export const Hero: React.FC = () => {
                 Our Charitable Trust provides £250,000 annually in stone masonry apprenticeships, university bursaries, and research grants.
               </p>
             </div>
-            <a
-              href="#gazette"
-              className="text-xs font-bold text-[#154c76] hover:text-amber-600 flex items-center space-x-1 pt-2 border-t border-slate-100"
+            <button
+              type="button"
+              onClick={() => handleAction('news')}
+              className="text-xs font-bold text-[#154c76] hover:text-amber-600 flex items-center space-x-1 pt-2 border-t border-slate-100 cursor-pointer w-full text-left"
             >
               <span>Explore Grants &amp; Papers</span>
               <ChevronRight className="w-4 h-4" />
-            </a>
+            </button>
           </div>
 
         </div>

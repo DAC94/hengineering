@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import { UtensilsCrossed, Wine, Calendar, Award, Sparkles, Check, ChevronRight } from 'lucide-react';
+import { UtensilsCrossed, Wine, ChevronRight } from 'lucide-react';
 
-export const BanquetMenu: React.FC = () => {
+interface BanquetMenuProps {
+  onNavigate?: (tab: string, sectionId?: string) => void;
+}
+
+export const BanquetMenu: React.FC<BanquetMenuProps> = ({ onNavigate }) => {
   const [activeTab, setActiveTab] = useState<'menu' | 'cellar'>('menu');
 
   const menuCourses = [
@@ -112,12 +116,12 @@ export const BanquetMenu: React.FC = () => {
         </div>
 
         {/* Tab Toggle */}
-        <div className="flex justify-center mb-8">
+        <div id="cellar" className="flex justify-center mb-8">
           <div className="inline-flex p-1 rounded-lg bg-slate-100 border border-slate-200">
             <button
               type="button"
               onClick={() => setActiveTab('menu')}
-              className={`px-5 py-2 rounded-md font-serif-guild text-xs font-bold uppercase tracking-wider transition-colors flex items-center space-x-2 ${
+              className={`px-5 py-2 rounded-md font-serif-guild text-xs font-bold uppercase tracking-wider transition-colors flex items-center space-x-2 cursor-pointer ${
                 activeTab === 'menu' ? 'bg-[#154c76] text-white shadow' : 'text-slate-600 hover:text-[#154c76]'
               }`}
             >
@@ -127,7 +131,7 @@ export const BanquetMenu: React.FC = () => {
             <button
               type="button"
               onClick={() => setActiveTab('cellar')}
-              className={`px-5 py-2 rounded-md font-serif-guild text-xs font-bold uppercase tracking-wider transition-colors flex items-center space-x-2 ${
+              className={`px-5 py-2 rounded-md font-serif-guild text-xs font-bold uppercase tracking-wider transition-colors flex items-center space-x-2 cursor-pointer ${
                 activeTab === 'cellar' ? 'bg-[#154c76] text-white shadow' : 'text-slate-600 hover:text-[#154c76]'
               }`}
             >
@@ -153,7 +157,7 @@ export const BanquetMenu: React.FC = () => {
             </div>
 
             <div className="space-y-6">
-              {menuCourses.map((c, i) => (
+              {menuCourses.map((c) => (
                 <div key={c.title} className="bg-white p-5 rounded border border-slate-200 shadow-2xs flex flex-col sm:flex-row justify-between gap-4 items-start">
                   <div className="space-y-1">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-amber-800 bg-amber-50 px-2 py-0.5 rounded">
@@ -177,10 +181,14 @@ export const BanquetMenu: React.FC = () => {
 
             <div className="mt-8 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-serif-guild">
               <span>Banqueting Manager: Mr. Septimus Megalith, Esq.</span>
-              <a href="#hall" className="text-[#154c76] font-bold hover:underline flex items-center space-x-1 mt-2 sm:mt-0">
+              <button
+                type="button"
+                onClick={() => onNavigate?.('hall')}
+                className="text-[#154c76] font-bold hover:underline flex items-center space-x-1 mt-2 sm:mt-0 cursor-pointer"
+              >
                 <span>Inquire for Private Banquet Hire</span>
-                <ChevronRight className="w-3.5 h-3.5" />
-              </a>
+                <ChevronRight className="w-3.5 h-3.5 text-amber-600" />
+              </button>
             </div>
           </div>
         )}

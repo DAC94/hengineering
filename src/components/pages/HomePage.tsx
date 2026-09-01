@@ -1,16 +1,16 @@
 import React from 'react';
 import { Hero } from '../Hero';
-import { Landmark, Award, BookOpen, ChevronRight, ShieldCheck } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 
 interface HomePageProps {
-  onNavigate: (tab: string) => void;
+  onNavigate: (tab: string, sectionId?: string) => void;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   return (
     <div className="space-y-12 pb-16">
       {/* Hero Header & Welcome */}
-      <Hero />
+      <Hero onNavigate={onNavigate} />
 
       {/* Quick Nav Action Cards */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,15 +31,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           <div className="flex flex-wrap gap-3 shrink-0">
             <button
               type="button"
-              onClick={() => onNavigate('about')}
-              className="px-5 py-2.5 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-serif-guild font-bold text-xs uppercase tracking-wider transition-colors"
+              onClick={() => onNavigate('about', 'history')}
+              className="px-5 py-2.5 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-serif-guild font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
             >
               Our History &amp; Charters
             </button>
             <button
               type="button"
-              onClick={() => onNavigate('banquet')}
-              className="px-5 py-2.5 rounded bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/40 font-serif-guild font-semibold text-xs uppercase tracking-wider transition-colors"
+              onClick={() => onNavigate('banquet', 'menu')}
+              className="px-5 py-2.5 rounded bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/40 font-serif-guild font-semibold text-xs uppercase tracking-wider transition-colors cursor-pointer"
             >
               Solstice Banquet Menu
             </button>
