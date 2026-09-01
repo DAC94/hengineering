@@ -1,6 +1,5 @@
 import React from 'react';
 import { X, Film, Shield } from 'lucide-react';
-import { CoatOfArms } from './CoatOfArms';
 
 interface RecruitmentVideoModalProps {
   isOpen: boolean;
@@ -30,24 +29,17 @@ export const RecruitmentVideoModal: React.FC<RecruitmentVideoModalProps> = ({ is
           </button>
         </div>
 
-        {/* Video Player Container with 4% CSS Zoom + Guild Crest Emblem Overlay */}
+        {/* Clean Video Player Container */}
         <div className="relative bg-black aspect-video overflow-hidden flex items-center justify-center">
-          
           <video
             src="/images/advertisement_video.mp4"
             controls
             autoPlay
             poster="/images/youth_dancing_hall.png"
-            className="w-full h-full object-contain scale-[1.04]"
+            className="w-full h-full object-contain"
           >
             Your browser does not support playing HTML5 video.
           </video>
-
-          {/* Official Guild Crest Emblem Overlay in Bottom-Right Corner (Masks AI Watermark) */}
-          <div className="absolute bottom-10 right-4 z-20 pointer-events-none p-2 rounded-xl bg-[#092e4a]/90 border border-amber-400/80 shadow-2xl backdrop-blur-md flex flex-col items-center justify-center">
-            <CoatOfArms size="md" className="w-16 h-20" />
-          </div>
-
         </div>
 
         {/* Modal Footer Banner */}
