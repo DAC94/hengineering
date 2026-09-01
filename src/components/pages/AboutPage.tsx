@@ -1,6 +1,6 @@
 import React from 'react';
 import { HistoryTimeline } from '../HistoryTimeline';
-import { Landmark, Flame, Scroll } from 'lucide-react';
+import { Landmark, Flame, Scroll, ShieldCheck, HeartHandshake } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
   return (
@@ -21,7 +21,7 @@ export const AboutPage: React.FC = () => {
         </p>
       </div>
 
-      {/* Special Lore Block 1 & 2 */}
+      {/* Special Lore Blocks 1 & 2 */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           
@@ -57,6 +57,43 @@ export const AboutPage: React.FC = () => {
             </div>
           </div>
 
+        </div>
+      </div>
+
+      {/* Armed Forces & Civic Affiliations */}
+      <div id="affiliations" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white p-6 sm:p-8 rounded-lg border border-slate-200 shadow-sm border-l-4 border-l-[#154c76] space-y-6">
+          <div className="flex items-center space-x-3 text-[#154c76]">
+            <ShieldCheck className="w-6 h-6 text-amber-600 shrink-0" />
+            <div>
+              <h3 className="text-lg font-serif-guild font-bold">
+                Armed Forces &amp; Civic Affiliations
+              </h3>
+              <p className="text-xs text-slate-500">Official Livery partnerships supporting the UK Armed Forces and City charities.</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-4 rounded bg-slate-50 border border-slate-200 space-y-2">
+              <div className="flex items-center space-x-2 text-[#154c76] font-serif-guild font-bold text-sm">
+                <ShieldCheck className="w-4 h-4 text-amber-600" />
+                <span>39 Engineer Regiment (Royal Engineers)</span>
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Official Military Affiliation. The Worshipful Company supports military plant operators, quarry specialists, and heavy structural engineering squadrons within 39 Engineer Regiment.
+              </p>
+            </div>
+
+            <div className="p-4 rounded bg-slate-50 border border-slate-200 space-y-2">
+              <div className="flex items-center space-x-2 text-[#154c76] font-serif-guild font-bold text-sm">
+                <HeartHandshake className="w-4 h-4 text-amber-600" />
+                <span>The Lord Mayor’s Appeal &amp; Conservation Trust</span>
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Civic &amp; Philanthropic Partnership. Supporting the annual Lord Mayor's Appeal charities and providing funding for the Salisbury Plain Archaeo-Conservation Trust.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 

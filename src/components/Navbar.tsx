@@ -4,7 +4,7 @@ import { Menu, X, Search, UserCheck, Phone, Mail, ChevronDown } from 'lucide-rea
 
 interface NavbarProps {
   activeTab: string;
-  onNavigate: (tab: string) => void;
+  onNavigate: (tab: string, sectionId?: string) => void;
   onOpenPortal?: () => void;
 }
 
@@ -21,6 +21,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onNavigate, onOpenPor
         { name: 'Our History & Charters', tab: 'about', sectionId: 'history' },
         { name: '1515 Precedence Dispute', tab: 'about', sectionId: 'dispute1515' },
         { name: '1666 Great Fire Survival', tab: 'about', sectionId: 'fire1666' },
+        { name: 'Civic Affiliations', tab: 'about', sectionId: 'affiliations' },
       ],
     },
     {
@@ -30,6 +31,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onNavigate, onOpenPor
         { name: 'The Master & Wardens', tab: 'court', sectionId: 'court' },
         { name: 'Court of Assistants', tab: 'court', sectionId: 'court' },
         { name: 'Beadle’s Staff & Regalia', tab: 'court', sectionId: 'beadle' },
+        { name: 'Book of Remembrance', tab: 'court', sectionId: 'remembrance' },
       ],
     },
     {
@@ -54,8 +56,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onNavigate, onOpenPor
       tab: 'freedom',
       dropdown: [
         { name: 'Freeman Examination', tab: 'freedom', sectionId: 'freedom' },
-        { name: 'Print Certificate', tab: 'freedom', sectionId: 'freedom' },
         { name: 'London Bridge Sheep Drive', tab: 'freedom', sectionId: 'sheepdrive' },
+        { name: 'Quarterage & Dues', tab: 'freedom', sectionId: 'dues' },
+        { name: 'Common Hall Elections', tab: 'freedom', sectionId: 'commonhall' },
       ],
     },
     { name: 'News & Philanthropy', tab: 'news' },
@@ -63,22 +66,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onNavigate, onOpenPor
   ];
 
   const handleNavClick = (tab: string, sectionId?: string) => {
-    onNavigate(tab);
+    onNavigate(tab, sectionId);
     setMobileMenuOpen(false);
     setActiveDropdown(null);
-
-    if (sectionId) {
-      setTimeout(() => {
-        const el = document.getElementById(sectionId);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
-        } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      }, 120);
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
   };
 
   return (

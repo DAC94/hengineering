@@ -1,8 +1,14 @@
 import React from 'react';
 import { CourtOfAssistants } from '../CourtOfAssistants';
-import { Compass, Award } from 'lucide-react';
+import { Compass, Award, BookOpen } from 'lucide-react';
 
 export const CourtPage: React.FC = () => {
+  const pastMasters = [
+    { name: 'Sir Percival Sarsen, Kt, FIME', period: 'Master 1912–1913', achievement: 'Supervised stone stabilization at Stonehenge during the Edwardian restoration.' },
+    { name: 'Col. Archibald Lintel, DSO', period: 'Master 1938–1939', achievement: 'Organized sandbag stone protection for Gresham Street during the London Blitz.' },
+    { name: 'Dame Beatrice Mortise, DBE', period: 'Master 1984–1985', achievement: 'Established the Guild Educational Trust Fund for young stonemasons.' },
+  ];
+
   return (
     <div className="py-12 bg-white space-y-12">
       
@@ -49,6 +55,31 @@ export const CourtPage: React.FC = () => {
               <span className="font-bold text-[#154c76] block">The Beadle’s Staff</span>
               <span className="text-[11px] text-slate-500">5ft hallmarked London silver mace (1742).</span>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Guild Book of Remembrance */}
+      <div id="remembrance" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-[#092e4a] text-white p-6 sm:p-8 rounded-lg border-t-4 border-t-amber-500 shadow-md space-y-4">
+          <div className="flex items-center space-x-3 text-amber-300">
+            <BookOpen className="w-6 h-6 text-amber-400 shrink-0" />
+            <div>
+              <h3 className="text-lg font-serif-guild font-bold">
+                The Guild Book of Remembrance • Past Masters
+              </h3>
+              <p className="text-xs text-slate-300 font-garamond italic">In memory of Past Masters who preserved the ancient craft of Hengineering.</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+            {pastMasters.map((m) => (
+              <div key={m.name} className="p-4 bg-slate-900/60 rounded border border-amber-500/30 space-y-1">
+                <span className="text-[10px] uppercase font-bold text-amber-400 block font-mono">{m.period}</span>
+                <h4 className="font-serif-guild font-bold text-sm text-slate-100">{m.name}</h4>
+                <p className="text-xs text-slate-300 font-garamond italic leading-relaxed">{m.achievement}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
