@@ -1,7 +1,7 @@
 import React from 'react';
 import { CoatOfArms } from './CoatOfArms';
 import { VisitorCounter } from './VisitorCounter';
-import { MapPin, Phone, Mail, Globe, ArrowUp } from 'lucide-react';
+import { MapPin, Phone, Mail, Globe, ArrowUp, ExternalLink } from 'lucide-react';
 
 interface FooterProps {
   onNavigate?: (tab: string) => void;
@@ -85,29 +85,64 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </ul>
           </div>
 
-          {/* Col 3: Address & Contact (4 Cols) */}
-          <div className="md:col-span-4 space-y-3">
-            <h4 className="font-serif-guild font-bold text-amber-400 text-xs uppercase tracking-wider">
-              Guildhall Office &amp; Contact
-            </h4>
-            <div className="text-xs text-slate-300 leading-relaxed space-y-2">
-              <p className="flex items-start space-x-2">
-                <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                <span>
-                  Worshipful Company of Megalith Builders<br />
-                  Megalithic Hall, Gresham Street<br />
-                  City of London, EC2V 7HH
-                </span>
-              </p>
-              <p className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>Tel: 020 7946 0115</span>
-              </p>
-              <p className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>Email: <a href="mailto:clerk@hengineer.org" className="underline hover:text-amber-300">clerk@hengineer.org</a></span>
-              </p>
+          {/* Col 3: Address, Contact & Associated Organizations (4 Cols) */}
+          <div className="md:col-span-4 space-y-6">
+            
+            <div className="space-y-3">
+              <h4 className="font-serif-guild font-bold text-amber-400 text-xs uppercase tracking-wider">
+                Guildhall Office &amp; Contact
+              </h4>
+              <div className="text-xs text-slate-300 leading-relaxed space-y-2">
+                <p className="flex items-start space-x-2">
+                  <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                  <span>
+                    Worshipful Company of Megalith Builders<br />
+                    Megalithic Hall, Gresham Street<br />
+                    City of London, EC2V 7HH
+                  </span>
+                </p>
+                <p className="flex items-center space-x-2">
+                  <Phone className="w-4 h-4 text-amber-400 shrink-0" />
+                  <span>Tel: 020 7946 0115</span>
+                </p>
+                <p className="flex items-center space-x-2">
+                  <Mail className="w-4 h-4 text-amber-400 shrink-0" />
+                  <span>Email: <a href="mailto:clerk@hengineer.org" className="underline hover:text-amber-300">clerk@hengineer.org</a></span>
+                </p>
+              </div>
             </div>
+
+            {/* Sister Livery & Industry Links */}
+            <div className="space-y-2 pt-2 border-t border-slate-700">
+              <h4 className="font-serif-guild font-bold text-amber-400 text-xs uppercase tracking-wider">
+                Associated Organizations
+              </h4>
+              <ul className="space-y-1.5 text-xs text-slate-300">
+                <li>
+                  <a
+                    href="https://www.masonslivery.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-amber-300 transition-colors flex items-center space-x-1.5"
+                  >
+                    <span>The Worshipful Company of Masons</span>
+                    <ExternalLink className="w-3 h-3 text-amber-400/80" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.stonefed.org.uk/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-amber-300 transition-colors flex items-center space-x-1.5"
+                  >
+                    <span>Stone Federation Great Britain</span>
+                    <ExternalLink className="w-3 h-3 text-amber-400/80" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+
           </div>
 
         </div>

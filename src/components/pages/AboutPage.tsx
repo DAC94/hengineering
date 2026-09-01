@@ -1,6 +1,6 @@
 import React from 'react';
 import { HistoryTimeline } from '../HistoryTimeline';
-import { Landmark, Flame, Scroll, ShieldCheck, HeartHandshake } from 'lucide-react';
+import { Landmark, Flame, Scroll, ShieldCheck, HeartHandshake, ExternalLink, Building2 } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
   return (
@@ -60,39 +60,81 @@ export const AboutPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Armed Forces & Civic Affiliations */}
+      {/* Armed Forces, Sister Livery & Industry Affiliations */}
       <div id="affiliations" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white p-6 sm:p-8 rounded-lg border border-slate-200 shadow-sm border-l-4 border-l-[#154c76] space-y-6">
           <div className="flex items-center space-x-3 text-[#154c76]">
             <ShieldCheck className="w-6 h-6 text-amber-600 shrink-0" />
             <div>
               <h3 className="text-lg font-serif-guild font-bold">
-                Armed Forces &amp; Civic Affiliations
+                Sister Livery Companies &amp; Industry Affiliations
               </h3>
-              <p className="text-xs text-slate-500">Official Livery partnerships supporting the UK Armed Forces and City charities.</p>
+              <p className="text-xs text-slate-500">Official civic links with fellow City Livery Companies, British Military units, and natural stone federations.</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-4 rounded bg-slate-50 border border-slate-200 space-y-2">
-              <div className="flex items-center space-x-2 text-[#154c76] font-serif-guild font-bold text-sm">
-                <ShieldCheck className="w-4 h-4 text-amber-600" />
-                <span>39 Engineer Regiment (Royal Engineers)</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            {/* Sister Livery */}
+            <div className="p-4 rounded bg-slate-50 border border-slate-200 space-y-2 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center space-x-2 text-[#154c76] font-serif-guild font-bold text-sm mb-1">
+                  <Building2 className="w-4 h-4 text-amber-600" />
+                  <span>The Worshipful Company of Masons</span>
+                </div>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Sister City Livery Company (No. 30). Founded in 1356, representing operative and speculative stonemasons across the City of London.
+                </p>
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Official Military Affiliation. The Worshipful Company supports military plant operators, quarry specialists, and heavy structural engineering squadrons within 39 Engineer Regiment.
-              </p>
+              <a
+                href="https://www.masonslivery.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-1.5 text-xs font-bold text-[#154c76] hover:text-amber-600 font-serif-guild uppercase tracking-wider pt-2 border-t border-slate-200"
+              >
+                <span>Visit masonslivery.org</span>
+                <ExternalLink className="w-3.5 h-3.5 text-amber-600" />
+              </a>
             </div>
 
-            <div className="p-4 rounded bg-slate-50 border border-slate-200 space-y-2">
-              <div className="flex items-center space-x-2 text-[#154c76] font-serif-guild font-bold text-sm">
-                <HeartHandshake className="w-4 h-4 text-amber-600" />
-                <span>The Lord Mayor’s Appeal &amp; Conservation Trust</span>
+            {/* Stone Federation GB */}
+            <div className="p-4 rounded bg-slate-50 border border-slate-200 space-y-2 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center space-x-2 text-[#154c76] font-serif-guild font-bold text-sm mb-1">
+                  <Landmark className="w-4 h-4 text-amber-600" />
+                  <span>Stone Federation Great Britain</span>
+                </div>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Official Trade Federation for the natural stone industry in Great Britain, promoting excellence in masonry, conservation, and quarrying.
+                </p>
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Civic &amp; Philanthropic Partnership. Supporting the annual Lord Mayor's Appeal charities and providing funding for the Salisbury Plain Archaeo-Conservation Trust.
-              </p>
+              <a
+                href="https://www.stonefed.org.uk/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-1.5 text-xs font-bold text-[#154c76] hover:text-amber-600 font-serif-guild uppercase tracking-wider pt-2 border-t border-slate-200"
+              >
+                <span>Visit stonefed.org.uk</span>
+                <ExternalLink className="w-3.5 h-3.5 text-amber-600" />
+              </a>
             </div>
+
+            {/* Military Affiliation */}
+            <div className="p-4 rounded bg-slate-50 border border-slate-200 space-y-2 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center space-x-2 text-[#154c76] font-serif-guild font-bold text-sm mb-1">
+                  <ShieldCheck className="w-4 h-4 text-amber-600" />
+                  <span>39 Engineer Regiment (Royal Engineers)</span>
+                </div>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Official Military Affiliation. Supporting military plant operators, quarry specialists, and heavy structural engineering squadrons.
+                </p>
+              </div>
+              <div className="pt-2 border-t border-slate-200 text-[11px] font-semibold text-slate-500 font-mono">
+                Military Affiliation • Royal Engineers
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
