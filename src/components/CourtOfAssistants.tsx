@@ -18,7 +18,7 @@ export const CourtOfAssistants: React.FC = () => {
       title: 'Upper Warden of the Court',
       bio: 'Senior Counsel for Ancient Stonework Rights. Author of "The Law of Unmoved Stones and Ancient Rights of Roller Passage".',
       badge: 'Sworn Liveryman & Upper Warden',
-      photo: '/images/officer_eleanor_vance.jpg',
+      photo: '/images/officer_eleanor_vance.png',
       initials: 'EV',
     },
     {
@@ -27,7 +27,7 @@ export const CourtOfAssistants: React.FC = () => {
       title: 'Renter Warden & Treasurer',
       bio: 'Oversees the Guild Charitable Trust Fund, providing £250,000 annually in stone masonry apprenticeships.',
       badge: 'Sworn Liveryman & Renter Warden',
-      photo: '/images/officer_bartholomew_bluestone.jpg',
+      photo: '/images/officer_bartholomew_stirling.jpg',
       initials: 'BS',
     },
     {
@@ -36,7 +36,7 @@ export const CourtOfAssistants: React.FC = () => {
       title: 'Chair of Next Gen Hengineers',
       bio: 'Partner at Arup Heavy Structures & Founder of the Next Gen Network. Specialist in parametric stone modeling and young stonemason indentures.',
       badge: 'Junior Warden & Youth Network Chair',
-      photo: '/images/officer_cordelia_sterling.jpg',
+      photo: '/images/officer_cordelia_sterling.png',
       initials: 'CS',
     },
     {
@@ -78,17 +78,18 @@ export const CourtOfAssistants: React.FC = () => {
             >
               <div>
                 {/* Formal Portrait Photo */}
-                <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-amber-400 shadow-md mb-4 bg-[#154c76] flex items-center justify-center">
+                <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-amber-400 shadow-md mb-4 bg-[#154c76] flex items-center justify-center shrink-0">
                   <img
                     src={officer.photo}
                     alt={officer.name}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     onError={(e) => {
+                      // Fallback avatar initials if file missing
+                      e.currentTarget.style.display = 'none';
                       const parent = e.currentTarget.parentElement;
-                      if (parent) {
-                        e.currentTarget.style.display = 'none';
+                      if (parent && !parent.querySelector('.fallback-initials')) {
                         const fallbackText = document.createElement('span');
-                        fallbackText.className = 'font-serif-guild text-2xl font-bold text-amber-300';
+                        fallbackText.className = 'fallback-initials font-serif-guild text-2xl font-bold text-amber-300';
                         fallbackText.innerText = officer.initials;
                         parent.appendChild(fallbackText);
                       }
