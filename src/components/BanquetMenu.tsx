@@ -76,7 +76,7 @@ export const BanquetMenu: React.FC<BanquetMenuProps> = ({ onNavigate }) => {
             <div className="p-4">
               <h4 className="font-serif-guild font-bold text-[#154c76] text-sm mb-1">Megalithic Hall Dining Room</h4>
               <p className="text-xs text-slate-500 leading-relaxed font-normal">
-                Candlelit long tables set with silver candelabras and white linen in the hammerbeam Great Trilithon Room.
+                Candlelit long tables set with silver candelabras and white linen in the hammerbeam Great Room.
               </p>
             </div>
           </div>
@@ -180,7 +180,7 @@ export const BanquetMenu: React.FC<BanquetMenuProps> = ({ onNavigate }) => {
             </div>
 
             <div className="mt-8 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-serif-guild">
-              <span>Banqueting Manager: Mr. Septimus Howard, Esq.</span>
+              <span>Banqueting Manager: Mr. Arthur Howard, Esq.</span>
               <button
                 type="button"
                 onClick={() => onNavigate?.('hall')}

@@ -41,12 +41,12 @@ export const CourtOfAssistants: React.FC = () => {
     },
     {
       role: 'The Clerk to the Guild',
-      name: 'Septimus Howard, Esq.',
+      name: 'Arthur Howard, Esq.',
       title: 'Clerk to the Worshipful Company',
       bio: 'Manages Guildhall business, Freedom of the City enrollments, and Megalithic Hall venue reservations.',
       badge: 'Clerk to the Worshipful Company',
       photo: '/images/officer_septimus_megalith.jpg',
-      initials: 'SH',
+      initials: 'AH',
     },
   ];
 

@@ -211,7 +211,7 @@ export const FreedomApplication: React.FC = () => {
                     <div className="text-[10px] text-[#735409] uppercase tracking-wider mt-1">Master Hengineer</div>
                   </div>
                   <div>
-                    <div className="font-serif-guild text-base italic font-bold text-[#422c04]">Septimus Howard, Esq.</div>
+                    <div className="font-serif-guild text-base italic font-bold text-[#422c04]">Arthur Howard, Esq.</div>
                     <div className="text-[10px] text-[#735409] uppercase tracking-wider mt-1">Clerk to the Guild</div>
                   </div>
                 </div>
