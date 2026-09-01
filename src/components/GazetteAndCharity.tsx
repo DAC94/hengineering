@@ -136,7 +136,7 @@ export const GazetteAndCharity: React.FC = () => {
 
               <button
                 type="button"
-                onClick={() => alert("Grant application forms may be requested via the Clerk at clerk@hengineering.org.")}
+                onClick={() => alert("Grant application forms may be requested via the Clerk at clerk@hengineer.org.")}
                 className="w-full py-3 rounded bg-[#154c76] hover:bg-[#092e4a] text-white font-serif-guild text-xs uppercase tracking-wider font-bold transition-colors"
               >
                 Apply for Guild Educational Grant

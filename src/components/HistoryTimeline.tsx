@@ -35,8 +35,8 @@ export const HistoryTimeline: React.FC = () => {
     },
     {
       year: '2026 AD',
-      title: 'Digital Revival & hengineering.org',
-      description: 'The Worshipful Company launches its digital portal at hengineering.org, expanding educational grants, stone masonry apprenticeships, and online Freedom of the City.',
+      title: 'Digital Revival & hengineer.org',
+      description: 'The Worshipful Company launches its digital portal at hengineer.org, expanding educational grants, stone masonry apprenticeships, and online Freedom of the City.',
       highlight: 'Present Day Hengineering',
     },
   ];

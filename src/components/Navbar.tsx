@@ -63,7 +63,7 @@ export const Navbar: React.FC = () => {
             <span className="hidden sm:inline text-slate-500">•</span>
             <span className="flex items-center space-x-1.5 text-slate-300">
               <Mail className="w-3.5 h-3.5 text-amber-400" />
-              <span>clerk@hengineering.org</span>
+              <span>clerk@hengineer.org</span>
             </span>
           </div>
 

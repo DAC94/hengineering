@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
 
             <div className="text-xs text-amber-300 font-mono flex items-center space-x-1.5">
               <Globe className="w-4 h-4 text-amber-400" />
-              <span>Official Website: <strong>hengineering.org</strong></span>
+              <span>Official Website: <strong>hengineer.org</strong></span>
             </div>
           </div>
 
@@ -74,7 +74,7 @@ export const Footer: React.FC = () => {
               </p>
               <p className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>Email: <a href="mailto:clerk@hengineering.org" className="underline hover:text-amber-300">clerk@hengineering.org</a></span>
+                <span>Email: <a href="mailto:clerk@hengineer.org" className="underline hover:text-amber-300">clerk@hengineer.org</a></span>
               </p>
             </div>
           </div>
@@ -83,7 +83,7 @@ export const Footer: React.FC = () => {
 
         {/* Copyright Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 font-mono">
-          <p>© COPYRIGHT {new Date().getFullYear()} WCoMB, ALL RIGHTS RESERVED • hengineering.org</p>
+          <p>© COPYRIGHT {new Date().getFullYear()} WCoMB, ALL RIGHTS RESERVED • hengineer.org</p>
           
           <div className="flex items-center space-x-4 mt-3 sm:mt-0">
             <span>Saxa Ligamus, Saecula Stabilimus</span>
