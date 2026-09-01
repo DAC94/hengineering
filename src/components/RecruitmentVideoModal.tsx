@@ -29,10 +29,10 @@ export const RecruitmentVideoModal: React.FC<RecruitmentVideoModalProps> = ({ is
           </button>
         </div>
 
-        {/* Clean Video Player Container */}
+        {/* Clean Video Player Container with Cache-Busting Query String */}
         <div className="relative bg-black aspect-video overflow-hidden flex items-center justify-center">
           <video
-            src="/images/advertisement_video.mp4"
+            src="/images/advertisement_video.mp4?v=2"
             controls
             autoPlay
             poster="/images/youth_dancing_hall.png"
