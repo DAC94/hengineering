@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { FreemenPortalModal } from './components/FreemenPortalModal';
+import { CookieConsentBanner } from './components/CookieConsentBanner';
 
 import { HomePage } from './components/pages/HomePage';
 import { AboutPage } from './components/pages/AboutPage';
@@ -13,6 +14,7 @@ import { YouthPage } from './components/pages/YouthPage';
 import { EventsCalendar } from './components/EventsCalendar';
 import { NewsPage } from './components/pages/NewsPage';
 import { HallPage } from './components/pages/HallPage';
+import { PrivacyPage } from './components/pages/PrivacyPage';
 
 export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('home');
@@ -54,6 +56,8 @@ export const App: React.FC = () => {
         return <NewsPage />;
       case 'hall':
         return <HallPage />;
+      case 'privacy':
+        return <PrivacyPage />;
       case 'home':
       default:
         return <HomePage onNavigate={handleNavigate} />;
@@ -84,6 +88,9 @@ export const App: React.FC = () => {
         isOpen={portalOpen}
         onClose={() => setPortalOpen(false)}
       />
+
+      {/* Sticky Cookie Consent Banner */}
+      <CookieConsentBanner onNavigate={handleNavigate} />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { CoatOfArms } from './CoatOfArms';
 import { VisitorCounter } from './VisitorCounter';
-import { MapPin, Phone, Mail, Globe, ArrowUp, ExternalLink } from 'lucide-react';
+import { MapPin, Phone, Mail, Globe, ArrowUp, ExternalLink, ShieldCheck } from 'lucide-react';
 
 interface FooterProps {
   onNavigate?: (tab: string) => void;
@@ -88,6 +88,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <li>
                 <button type="button" onClick={() => handleLinkClick('hall')} className="hover:text-amber-300 transition-colors text-left cursor-pointer">Megalithic Hall Hire</button>
               </li>
+              <li>
+                <button type="button" onClick={() => handleLinkClick('privacy')} className="hover:text-amber-300 transition-colors text-left cursor-pointer text-amber-200/90 font-semibold flex items-center space-x-1">
+                  <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
+                  <span>Privacy Policy &amp; GDPR</span>
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -158,7 +164,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <p>© COPYRIGHT {new Date().getFullYear()} WCoMB, ALL RIGHTS RESERVED • hengineer.org</p>
           
           <div className="flex items-center space-x-4 mt-3 sm:mt-0">
-            <span>Saxa Ligamus, Saecula Stabilimus</span>
+            <button
+              type="button"
+              onClick={() => handleLinkClick('privacy')}
+              className="hover:text-amber-300 transition-colors cursor-pointer"
+            >
+              Privacy Policy
+            </button>
+            <span>•</span>
             <button
               type="button"
               onClick={scrollToTop}
