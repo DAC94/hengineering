@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, Users, Award, ChevronLeft, ChevronRight, Music, Mail, ShieldCheck, Film, Play } from 'lucide-react';
+import { Sparkles, Users, Award, ChevronLeft, ChevronRight, Music, Mail, ShieldCheck } from 'lucide-react';
 
 interface Slide {
   id: number;
@@ -12,7 +12,6 @@ interface Slide {
 
 export const YouthPage: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
-  const [isVideoPlaying, setIsVideoPlaying] = useState<boolean>(false);
 
   const slides: Slide[] = [
     {
@@ -78,46 +77,6 @@ export const YouthPage: React.FC = () => {
         <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto font-normal">
           Connecting young stone masons, civil engineers, archaeo-astronomers, and City professionals under 35 with ancient Livery traditions, social banquets, and vault parties.
         </p>
-      </div>
-
-      {/* Featured Video Showcase Player */}
-      <div id="recruitment-video" className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#092e4a] rounded-lg border-2 border-amber-500/60 shadow-xl overflow-hidden">
-          
-          <div className="p-4 bg-[#154c76] text-white flex justify-between items-center border-b border-amber-500/30">
-            <div className="flex items-center space-x-2 text-xs font-serif-guild font-bold text-amber-300">
-              <Film className="w-4 h-4 text-amber-400" />
-              <span>Official 2026 Recruitment Film • The Next Gen Hengineers</span>
-            </div>
-            <span className="text-[11px] font-mono text-slate-300 bg-slate-900/60 px-2.5 py-0.5 rounded border border-slate-700">
-              HD Video • City Company No. 115
-            </span>
-          </div>
-
-          <div className="relative bg-slate-950 aspect-video flex items-center justify-center overflow-hidden">
-            <video
-              src="/images/advertisement_video.mp4"
-              controls
-              poster="/images/youth_dancing_hall.png"
-              preload="metadata"
-              onPlay={() => setIsVideoPlaying(true)}
-              onPause={() => setIsVideoPlaying(false)}
-              className="w-full h-full object-contain"
-            >
-              Your browser does not support HTML5 video playback.
-            </video>
-          </div>
-
-          <div className="p-4 bg-[#092e4a] text-slate-300 flex flex-col sm:flex-row justify-between items-center text-xs gap-2">
-            <div className="font-serif-guild text-amber-300 font-semibold">
-              🎬 "4,000 Years of Sarsen Tradition — Join the Freedom Today"
-            </div>
-            <div className="font-mono text-[11px] text-slate-400">
-              Megalithic Hall Media Archives • EC2V 7HH
-            </div>
-          </div>
-
-        </div>
       </div>
 
       {/* Real Image Carousel */}

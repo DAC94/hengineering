@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Film, Shield } from 'lucide-react';
+import { X, Film, Shield, Sparkles } from 'lucide-react';
 
 interface RecruitmentVideoModalProps {
   isOpen: boolean;
@@ -29,17 +29,25 @@ export const RecruitmentVideoModal: React.FC<RecruitmentVideoModalProps> = ({ is
           </button>
         </div>
 
-        {/* Video Player */}
-        <div className="relative bg-black aspect-video flex items-center justify-center">
+        {/* Video Player Container with 4% CSS Zoom + Guild Archival Watermark Badge Overlay */}
+        <div className="relative bg-black aspect-video overflow-hidden flex items-center justify-center">
+          
           <video
             src="/images/advertisement_video.mp4"
             controls
             autoPlay
             poster="/images/youth_dancing_hall.png"
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain scale-[1.04]"
           >
             Your browser does not support playing HTML5 video.
           </video>
+
+          {/* Official Guild Archival Stamp Overlay in Bottom-Right Corner (Masks AI Watermark) */}
+          <div className="absolute bottom-12 right-4 z-20 pointer-events-none bg-[#092e4a]/95 border border-amber-400/80 rounded-full px-3 py-1 text-amber-200 text-[10px] font-serif-guild font-bold shadow-lg flex items-center space-x-1.5 backdrop-blur-md">
+            <Sparkles className="w-3 h-3 text-amber-400 shrink-0" />
+            <span>WCoMB Archival Film • Livery No. 115</span>
+          </div>
+
         </div>
 
         {/* Modal Footer Banner */}
